@@ -1,3 +1,4 @@
+import Button from "../ui/Button";
 export default function FeaturedEvent() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
@@ -19,21 +20,19 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Topuria <br /> vs Oliveira
+              Chimaev <br /> vs Strickland
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
-              Full breakdowns, betting analysis, and predictions for UFC 317.
+              Full breakdowns, betting analysis, and predictions for UFC 328.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <button className="rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-500">
-                View Breakdown
-              </button>
+              <Button>View Breakdown</Button>
 
-              <button className="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-white/40">
-                View Bets
-              </button>
+<Button variant="secondary">
+  View Bets
+</Button>
             </div>
           </div>
 

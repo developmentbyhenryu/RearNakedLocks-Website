@@ -21,13 +21,13 @@ const bets = [
 
 export default function WeeklyBets() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="mb-10">
+    <section className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <div className="mb-14">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-red-500">
           Weekly Betting Segments
         </p>
 
-        <h2 className="text-3xl uppercase text-white md:text-5xl">
+        <h2 className="text-4xl uppercase tracking-tight text-white md:text-5xl">
           Featured Bets
         </h2>
       </div>
@@ -46,7 +46,7 @@ export default function WeeklyBets() {
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-6" />
             </div>
 
             <div className="absolute bottom-0 left-0 p-6">
