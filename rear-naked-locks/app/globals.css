@@ -1,20 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0b0d;
-  --card: #16181d;
-  --primary: #e53935;
-  --gold: #d4a017;
-  --text: #f5f5f5;
-  --muted: #9ca3af;
-  --profit: #22c55e;
-  --loss: #ef4444;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  --background: #000000;
+  --card: #0f1117;
+  --foreground: #ffffff;
 }
 
 html {
@@ -23,29 +12,82 @@ html {
 
 body {
   background: var(--background);
-  color: var(--text);
-  font-family: var(--font-body);
-  background-image:
-  radial-gradient(circle at top, rgba(229, 57, 53, 0.08), transparent 30%);
-  text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
+/* LAYOUT */
+
+.rnl-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* CARDS */
+
+.rnl-card {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--card);
 }
 
-button {
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* LABELS */
+
+.rnl-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #ef4444;
+}
+
+/* BUTTONS */
+
+.rnl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 120px;
+
+  border-radius: 9999px;
+  background: #dc2626;
+
+  padding: 0.7rem 1.15rem;
+
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  color: white;
+
+  transition: all 0.25s ease;
+}
+
+.rnl-button:hover {
+  background: #ef4444;
+}
+
+.rnl-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  padding: 0.7rem 1.15rem;
+
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  color: white;
+}
+
+.rnl-stat-card {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--card);
+  padding: 1.25rem;
 }
