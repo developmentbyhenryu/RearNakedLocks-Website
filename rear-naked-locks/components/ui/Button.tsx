@@ -9,7 +9,7 @@ export default function Button({
 }: ButtonProps) {
   const styles = {
     primary:
-      "bg-red-600 hover:bg-red-500 text-white border border-red-500/30",
+      "border border-red-500/30 bg-red-600 text-white hover:bg-red-500",
 
     secondary:
       "border border-white/15 bg-black/20 text-white hover:border-white/40 hover:bg-white/5",
@@ -17,7 +17,7 @@ export default function Button({
 
   return (
     <button
-      className={`rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ${styles[variant]}`}
+      className={`inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${styles[variant]}`}
     >
       {children}
     </button>
