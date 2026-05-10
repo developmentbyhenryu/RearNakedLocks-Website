@@ -26,7 +26,7 @@ const bets = [
 export default function WeeklyBets() {
   return (
     <section className="bg-black py-14 sm:py-24">
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full">
         {/* HEADER */}
         <div className="mb-10 sm:mb-14">
           <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-red-500 sm:text-[11px]">
@@ -45,7 +45,7 @@ export default function WeeklyBets() {
               key={bet.title}
               className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)] transition duration-300 hover:border-red-500/30"
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 {/* IMAGE */}
                 <Image
                   src={bet.image}
@@ -55,11 +55,11 @@ export default function WeeklyBets() {
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                 {/* CONTENT */}
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  {/* TOP ROW */}
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+                  {/* TOP */}
                   <div className="mb-2 flex items-center justify-between">
                     <p className="text-[10px] uppercase tracking-[0.28em] text-red-400 sm:text-[11px]">
                       Rear Naked Locks
@@ -71,34 +71,35 @@ export default function WeeklyBets() {
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="mb-4 text-xl font-black uppercase leading-none text-white sm:text-2xl md:text-4xl">
+                  <h3 className="max-w-[85%] text-2xl font-black uppercase leading-none text-white sm:text-3xl md:text-5xl">
                     {bet.title}
                   </h3>
 
                   {/* BUTTON */}
-                  <button
-                    className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-red-500/30
-                      bg-red-600
-                      px-5
-                      py-2.5
-                      text-[11px]
-                      font-black
-                      uppercase
-                      tracking-[0.15em]
-                      text-white
-                      transition-all
-                      duration-300
-                      hover:bg-red-500
-                    "
-                  >
-                    View Picks
-                  </button>
+                  <div className="mt-4">
+                    <button
+                      className="
+                        flex
+                        h-10
+                        min-w-[140px]
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-red-600
+                        px-5
+                        text-xs
+                        font-black
+                        uppercase
+                        tracking-wide
+                        text-white
+                        transition-all
+                        duration-300
+                        hover:bg-red-500
+                      "
+                    >
+                      View Picks
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
