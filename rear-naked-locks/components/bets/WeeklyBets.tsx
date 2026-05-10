@@ -1,25 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const bets = [
   {
     title: "Play of the Week",
     image: "/bets/play-of-week.jpg",
-    odds: "-101",
+    link: "/bets/play-of-the-week",
   },
   {
     title: "Bark Alley Bangers",
     image: "/bets/bark-alley.jpg",
-    odds: "+225",
+    link: "/bets/bark-alley-bangers",
   },
   {
     title: "Around the World",
     image: "/bets/around-world.jpg",
-    odds: "+106",
+    link: "/bets/around-the-world",
   },
   {
     title: "All Action Parlay",
     image: "/bets/all-action.jpg",
-    odds: "+102",
+    link: "/bets/all-action-parlay",
   },
 ];
 
@@ -74,9 +75,12 @@ export default function WeeklyBets() {
 
                 {/* BUTTON */}
                 <div className="mt-4">
-                  <button className="rnl-button min-w-[140px]">
-                    View Picks
-                  </button>
+                  <Link
+  href={bet.link}
+  className="rnl-button"
+>
+  View Picks
+</Link>
                 </div>
               </div>
             </div>
