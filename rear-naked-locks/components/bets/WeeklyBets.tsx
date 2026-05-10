@@ -25,27 +25,27 @@ const bets = [
 
 export default function WeeklyBets() {
   return (
-    <section className="bg-black py-16 sm:py-24">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10">
+    <section className="bg-black py-14 sm:py-24">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10">
         {/* HEADER */}
-        <div className="mb-14">
-          <p className="mb-4 text-[11px] uppercase tracking-[0.35em] text-red-500">
+        <div className="mb-10 sm:mb-14">
+          <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-red-500 sm:text-[11px]">
             Weekly Betting Segments
           </p>
 
-          <h2 className="text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
             Featured Bets
           </h2>
         </div>
 
         {/* GRID */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
           {bets.map((bet) => (
             <div
               key={bet.title}
               className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)] transition duration-300 hover:border-red-500/30"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/9] overflow-hidden">
                 {/* IMAGE */}
                 <Image
                   src={bet.image}
@@ -55,23 +55,23 @@ export default function WeeklyBets() {
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
                 {/* CONTENT */}
-                <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 sm:px-8">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                   {/* TOP ROW */}
-                  <div className="mb-3 flex items-center justify-between">
-                    <p className="text-[11px] uppercase tracking-[0.3em] text-red-400">
+                  <div className="mb-2 flex items-center justify-between">
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-red-400 sm:text-[11px]">
                       Rear Naked Locks
                     </p>
 
-                    <span className="rounded-full border border-white/10 bg-black/40 px-3 py-1 text-sm font-bold text-white backdrop-blur-sm">
+                    <span className="rounded-full border border-white/10 bg-black/50 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
                       {bet.odds}
                     </span>
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="mb-5 text-xl font-black uppercase leading-none text-white sm:text-2xl md:text-5xl">
+                  <h3 className="mb-4 text-xl font-black uppercase leading-none text-white sm:text-2xl md:text-4xl">
                     {bet.title}
                   </h3>
 
@@ -79,8 +79,6 @@ export default function WeeklyBets() {
                   <button
                     className="
                       inline-flex
-                      h-10
-                      min-w-[120px]
                       items-center
                       justify-center
                       rounded-full
@@ -88,18 +86,15 @@ export default function WeeklyBets() {
                       border-red-500/30
                       bg-red-600
                       px-5
-                      text-xs
+                      py-2.5
+                      text-[11px]
                       font-black
                       uppercase
-                      tracking-wide
+                      tracking-[0.15em]
                       text-white
-                      shadow-lg
-                      shadow-red-900/30
                       transition-all
                       duration-300
                       hover:bg-red-500
-                      whitespace-nowrap
-                      leading-none
                     "
                   >
                     View Picks
