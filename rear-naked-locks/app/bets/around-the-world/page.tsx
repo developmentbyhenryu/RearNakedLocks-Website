@@ -1,34 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
-import CountryTracker from "@/components/stats/CountryTracker";
 
+import CountryTracker from "@/components/stats/CountryTracker";
+import { aroundTheWorldHistory } from "@/data/aroundTheWorld";
+
+/* AUTO CALCULATIONS */
+
+const wins = aroundTheWorldHistory.filter(
+  (bet) => bet.parlayResult === "win"
+).length;
+
+const losses = aroundTheWorldHistory.filter(
+  (bet) => bet.parlayResult === "loss"
+).length;
+
+const totalUnits = aroundTheWorldHistory.reduce(
+  (acc, bet) => acc + bet.units,
+  0
+);
+
+const roi = (
+  (totalUnits / aroundTheWorldHistory.length) *
+  100
+).toFixed(0);
 
 export default function AroundTheWorldPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-    {/* TOP NAV */}
-<div className="border-b border-white/10">
-  <div className="mx-auto flex max-w-7xl items-center px-6 py-4 md:px-10">
-    <Link
-      href="/"
-      className="
-        inline-flex
-        items-center
-        gap-2
-        text-sm
-        font-black
-        uppercase
-        tracking-wide
-        text-gray-300
-        transition-all
-        duration-300
-        hover:text-red-500
-      "
-    >
-      ← Back Home
-    </Link>
-  </div>
-</div>
+      {/* TOP NAV */}
+      <div className="border-b border-white/10">
+        <div className="mx-auto flex max-w-7xl items-center px-6 py-4 md:px-10">
+          <Link
+            href="/"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-sm
+              font-black
+              uppercase
+              tracking-wide
+              text-gray-300
+              transition-all
+              duration-300
+              hover:text-red-500
+            "
+          >
+            ← Back Home
+          </Link>
+        </div>
+      </div>
+
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(220,38,38,0.18),transparent_50%)]" />
@@ -61,7 +83,7 @@ export default function AroundTheWorldPage() {
                   </p>
 
                   <h3 className="mt-2 text-3xl font-black text-white">
-                    14-6
+                    {wins}-{losses}
                   </h3>
                 </div>
 
@@ -70,8 +92,15 @@ export default function AroundTheWorldPage() {
                     Units
                   </p>
 
-                  <h3 className="mt-2 text-3xl font-black text-green-400">
-                    +11.2
+                  <h3
+                    className={`mt-2 text-3xl font-black ${
+                      totalUnits >= 0
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {totalUnits > 0 ? "+" : ""}
+                    {totalUnits.toFixed(1)}
                   </h3>
                 </div>
 
@@ -80,8 +109,15 @@ export default function AroundTheWorldPage() {
                     ROI
                   </p>
 
-                  <h3 className="mt-2 text-3xl font-black text-white">
-                    +22%
+                  <h3
+                    className={`mt-2 text-3xl font-black ${
+                      Number(roi) >= 0
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {Number(roi) > 0 ? "+" : ""}
+                    {roi}%
                   </h3>
                 </div>
               </div>
@@ -146,8 +182,6 @@ export default function AroundTheWorldPage() {
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-             
             </div>
 
             <div className="p-6">
@@ -264,6 +298,7 @@ export default function AroundTheWorldPage() {
           </div>
         </div>
       </section>
+
       <CountryTracker />
 
       {/* CTA */}

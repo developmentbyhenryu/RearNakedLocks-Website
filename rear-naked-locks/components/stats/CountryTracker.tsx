@@ -1,5 +1,5 @@
 "use client";
-
+import { aroundTheWorldHistory } from "@/data/aroundTheWorld";
 import { useMemo, useState } from "react";
 import {
   BarChart,
@@ -10,63 +10,64 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const countryData = [
+
+/* COUNTRY TRACKER */
+
+const countryTracker: Record<
+  string,
   {
-    country: "Brazil",
-    wins: 8,
-    losses: 3,
-    profit: 6.2,
-  },
-  {
-    country: "Russia",
-    wins: 6,
-    losses: 1,
-    profit: 7.8,
-  },
-  {
-    country: "Mexico",
-    wins: 4,
-    losses: 5,
-    profit: -2.1,
-  },
-  {
-    country: "England",
-    wins: 5,
-    losses: 2,
-    profit: 3.9,
-  },
-  {
-    country: "Georgia",
-    wins: 3,
-    losses: 0,
-    profit: 4.7,
-  },
-  {
-    country: "France",
-    wins: 4,
-    losses: 2,
-    profit: 2.5,
-  },
-  {
-    country: "Japan",
-    wins: 2,
-    losses: 4,
-    profit: -1.8,
-  },
-  {
-    country: "Australia",
-    wins: 5,
-    losses: 3,
-    profit: 1.6,
-  },
-];
+    wins: number;
+    losses: number;
+    appearances: number;
+  }
+> = {};
+
+aroundTheWorldHistory.forEach((event) => {
+  event.legs.forEach((leg) => {
+    const country = leg.country;
+
+    if (!countryTracker[country]) {
+      countryTracker[country] = {
+        wins: 0,
+        losses: 0,
+        appearances: 0,
+      };
+    }
+
+    countryTracker[country].appearances += 1;
+
+    if (leg.result === "win") {
+      countryTracker[country].wins += 1;
+    } else {
+      countryTracker[country].losses += 1;
+    }
+  });
+});
+
+const countries = Object.entries(
+  countryTracker
+).map(([country, stats]) => ({
+  country,
+  ...stats,
+
+  profit:
+    stats.wins * 1 -
+    stats.losses * 1,
+
+  accuracy:
+    (
+      (stats.wins /
+        (stats.wins + stats.losses)) *
+      100
+    ).toFixed(0) + "%",
+}));
 
 export default function CountryTracker() {
   const [sortBy, setSortBy] = useState("profit");
   const [showAll, setShowAll] = useState(false);
 
   const sortedData = useMemo(() => {
-    const data = [...countryData];
+    const data = [...countries];
 
     switch (sortBy) {
       case "wins":
@@ -86,7 +87,8 @@ export default function CountryTracker() {
     : sortedData.slice(0, 5);
 
   return (
-    <section className="rnl-section border-t border-white/10">
+    <section className="border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
       {/* HEADER */}
       <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div>
@@ -188,14 +190,51 @@ export default function CountryTracker() {
                 />
 
                 <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#0d1117",
-                    border:
-                      "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "16px",
-                    color: "white",
-                  }}
-                />
+  content={({ active, payload, label }) => {
+    if (
+      active &&
+      payload &&
+      payload.length
+    ) {
+      const wins = payload.find(
+        (item: any) =>
+          item.dataKey === "wins"
+      );
+
+      const losses = payload.find(
+        (item: any) =>
+          item.dataKey === "losses"
+      );
+
+      return (
+        <div
+          className="
+            rounded-2xl
+            border
+            border-white/10
+            bg-[#0d1117]
+            p-4
+            shadow-2xl
+          "
+        >
+          <p className="mb-3 text-lg font-black text-white">
+            {label}
+          </p>
+
+          <p className="text-green-400 font-bold">
+            Wins : {wins?.value}
+          </p>
+
+          <p className="mt-1 text-red-400 font-bold">
+            Losses : {losses?.value}
+          </p>
+        </div>
+      );
+    }
+
+    return null;
+  }}
+/>
 
                 <Bar
                   dataKey="wins"
@@ -243,7 +282,10 @@ export default function CountryTracker() {
             </thead>
 
             <tbody>
-              {sortedData.map((country) => {
+              {(showAll
+  ? sortedData
+  : sortedData.slice(0, 10)
+).map((country) => {
                 const total =
                   country.wins + country.losses;
 
@@ -289,7 +331,33 @@ export default function CountryTracker() {
             </tbody>
           </table>
         </div>
+        <div className="border-t border-white/10 p-6 text-center">
+  <button
+    onClick={() => setShowAll(!showAll)}
+    className="
+      rounded-full
+      border
+      border-white/10
+      px-6
+      py-3
+      text-sm
+      font-black
+      uppercase
+      tracking-wide
+      text-white
+      transition-all
+      duration-300
+      hover:border-red-500/30
+      hover:bg-white/5
+    "
+  >
+    {showAll
+      ? "Show Top 10"
+      : "View All Countries"}
+  </button>
+</div>
       </div>
+    </div>
     </section>
   );
 }
