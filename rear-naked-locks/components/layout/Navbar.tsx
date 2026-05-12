@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 xl:px-10">
         {/* LOGO */}
         <div>
           <h1 className="text-xl uppercase tracking-wide text-white md:text-2xl">
@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* DESKTOP NAV */}
         <div className="hidden gap-6 text-sm text-gray-300 md:flex">
-          <a className="transition hover:text-white" href="#">
+          {/* <a className="transition hover:text-white" href="#">
             Events
           </a>
 
@@ -36,14 +36,19 @@ export default function Navbar() {
 
           <a className="transition hover:text-white" href="#">
             Games
-          </a>
+          </a> */}
         </div>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-          <button className="hidden rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-500 md:block">
-            YouTube
-          </button>
+          <a
+  href="https://www.youtube.com/@RearNakedLocks"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-500 md:block"
+>
+  YouTube
+</a>
 
           {/* MOBILE MENU BUTTON */}
           <button
@@ -59,15 +64,20 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-white/10 bg-black px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5 text-lg text-white">
-            <a href="#">Events</a>
+            {/* <a href="#">Events</a>
             <a href="#">Fighters</a>
             <a href="#">Tracker</a>
             <a href="#">Articles</a>
-            <a href="#">Games</a>
+            <a href="#">Games</a> */}
 
-            <button className="mt-4 rounded-full bg-red-600 px-4 py-3 font-semibold text-white">
-              YouTube
-            </button>
+            <a
+  href="https://www.youtube.com/@RearNakedLocks"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 rounded-full bg-red-600 px-4 py-3 text-center font-semibold text-white"
+>
+  YouTube
+</a>
           </div>
         </div>
       )}
