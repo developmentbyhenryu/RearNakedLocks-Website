@@ -2,7 +2,68 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 import Button from "../ui/Button";
+
+import { playOfTheWeekHistory } from "@/data/playOfTheWeek";
+import { aroundTheWorldHistory } from "@/data/aroundTheWorld";
+import { barkAlleyHistory } from "@/data/barkAlley";
+import { allActionHistory } from "@/data/allActionParlay";
+
+/* COMBINED DATA */
+
+const allBets = [
+  ...playOfTheWeekHistory.map((bet) => ({
+    result: bet.parlayResult,
+    units: bet.units,
+  })),
+
+  ...aroundTheWorldHistory.map((bet) => ({
+    result: bet.parlayResult,
+    units: bet.units,
+  })),
+
+  ...barkAlleyHistory.map((bet) => ({
+    result: bet.result,
+    units: bet.units,
+  })),
+
+  ...allActionHistory.map((bet) => ({
+    result: bet.parlayResult,
+    units: bet.units,
+  })),
+];
+
+/* RECORD */
+
+const wins = allBets.filter(
+  (bet) => bet.result === "win"
+).length;
+
+const losses = allBets.filter(
+  (bet) => bet.result === "loss"
+).length;
+
+/* TOTAL UNITS */
+
+const totalUnits = allBets.reduce(
+  (acc, bet) => acc + bet.units,
+  0
+);
+
+/* WIN RATE */
+
+const winRate = (
+  (wins / allBets.length) *
+  100
+).toFixed(0);
+
+/* ROI */
+
+const roi = (
+  (totalUnits / allBets.length) *
+  100
+).toFixed(0);
 
 export default function Hero() {
   return (
@@ -53,13 +114,17 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button>
-              View Weekly Bets
-            </Button>
+            <a href="#weekly-bets">
+  <Button>
+    View Weekly Bets
+  </Button>
+</a>
 
-            <Button variant="secondary">
+            <a href="#video-breakdown">
+              <Button variant="secondary">
               Watch Breakdown
-            </Button>
+              </Button>
+            </a>
           </div>
         </motion.div>
 
@@ -71,11 +136,11 @@ export default function Hero() {
           className="rounded-3xl border border-red-500/20 bg-[var(--card)] p-6 shadow-2xl shadow-red-500/10 md:p-8"
         >
           <p className="text-xs uppercase tracking-[0.35em] text-red-400">
-            Current Record
+            Current Bets Record
           </p>
 
           <h2 className="mt-3 text-5xl font-black text-white sm:text-6xl">
-            42-18
+            {wins}-{losses}
           </h2>
 
           <div className="mt-8 space-y-5">
@@ -84,8 +149,15 @@ export default function Hero() {
                 Units
               </span>
 
-              <span className="font-semibold text-green-400">
-                +18.4 Units
+              <span
+                className={`font-semibold ${
+                  totalUnits >= 0
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
+                {totalUnits > 0 ? "+" : ""}
+                {totalUnits.toFixed(1)} Units
               </span>
             </div>
 
@@ -95,7 +167,7 @@ export default function Hero() {
               </span>
 
               <span className="font-semibold text-white">
-                67%
+                {winRate}%
               </span>
             </div>
 
@@ -104,8 +176,15 @@ export default function Hero() {
                 ROI
               </span>
 
-              <span className="font-semibold text-white">
-                +14%
+              <span
+                className={`font-semibold ${
+                  Number(roi) >= 0
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
+                {Number(roi) > 0 ? "+" : ""}
+                {roi}%
               </span>
             </div>
           </div>

@@ -206,9 +206,9 @@ export default function AroundTheWorldPage() {
                   </p>
                 </div>
 
-                <button className="rounded-full bg-red-600 px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:bg-red-500">
+                <a href="#video-breakdown" className="rounded-full bg-red-600 px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:bg-red-500">
                   View Breakdown
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -248,9 +248,7 @@ export default function AroundTheWorldPage() {
                   </p>
                 </div>
 
-                <button className="rounded-full border border-white/10 px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:border-red-500/40 hover:bg-white/5">
-                  Analysis
-                </button>
+                
               </div>
             </div>
           </div>
@@ -290,17 +288,52 @@ export default function AroundTheWorldPage() {
                   </p>
                 </div>
 
-                <button className="rounded-full border border-white/10 px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:border-red-500/40 hover:bg-white/5">
-                  Breakdown
-                </button>
+        
               </div>
             </div>
           </div>
         </div>
+ 
       </section>
 
       <CountryTracker />
+    {/* VIDEO BREAKDOWN */}
+<section
+  id="video-breakdown"
+  className="border-t border-white/10"
+>
+  <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+    <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
+      {/* HEADER */}
+      <div className="border-b border-white/10 p-6 md:p-8">
+        <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+          Official Breakdown
+        </p>
 
+        <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
+          Watch The Breakdown
+        </h2>
+
+        <p className="mt-4 max-w-2xl text-gray-300">
+          Full Bark Alley breakdown including betting logic,
+          matchup analysis, underdog value, and why this
+          spot was targeted.
+        </p>
+      </div>
+
+      {/* VIDEO */}
+      <div className="aspect-video w-full">
+        <iframe
+          className="h-full w-full"
+          src="https://www.youtube.com/embed/5B3-wKlUCCk"
+          title="Rear Naked Locks Breakdown"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  </div>
+</section>
       {/* CTA */}
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-10">
@@ -321,13 +354,6 @@ export default function AroundTheWorldPage() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="https://youtube.com"
-              className="rounded-full bg-red-600 px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-red-500"
-            >
-              Watch On YouTube
-            </Link>
-
-            <Link
               href="/"
               className="rounded-full border border-white/10 px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:border-red-500/40 hover:bg-white/5"
             >
@@ -336,6 +362,8 @@ export default function AroundTheWorldPage() {
           </div>
         </div>
       </section>
+
+      
     </main>
   );
 }

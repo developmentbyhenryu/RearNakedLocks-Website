@@ -8,7 +8,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC 317
+          UFC Allen vs Costa
         </h2>
       </div>
 
@@ -16,7 +16,7 @@ export default function FeaturedEvent() {
         <div className="grid md:grid-cols-2">
           <div className="flex flex-col justify-center p-10">
             <p className="mb-3 text-sm uppercase tracking-[0.3em] text-red-400">
-              Main Event
+              Current Event
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
@@ -28,11 +28,11 @@ export default function FeaturedEvent() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button>View Breakdown</Button>
-
-<Button variant="secondary">
-  View Bets
-</Button>
+              <a href="#video-breakdown">
+                            <Button >
+                            Watch Breakdown
+                            </Button>
+                          </a>
             </div>
           </div>
 
@@ -45,5 +45,8 @@ export default function FeaturedEvent() {
         </div>
       </div>
     </section>
+
+    
+    
   );
 }

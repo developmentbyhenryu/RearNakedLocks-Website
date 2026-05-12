@@ -20,13 +20,16 @@ const bets = [
   {
     title: "All Action Parlay",
     image: "/bets/all-action.jpg",
-    link: "/bets/all-action-parlay",
+    link: "/bets/all-action",
   },
 ];
 
 export default function WeeklyBets() {
   return (
-    <section className="rnl-section">
+    <section
+  id="weekly-bets"
+  className="rnl-section"
+>
       {/* HEADER */}
       <div className="mb-10 sm:mb-14">
         <p className="rnl-label">

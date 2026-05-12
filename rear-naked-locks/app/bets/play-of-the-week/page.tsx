@@ -3,6 +3,15 @@ import Link from "next/link";
 
 import { playOfTheWeekHistory } from "@/data/playOfTheWeek";
 
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
+
 /* CHANNEL RECORD */
 
 const wins = playOfTheWeekHistory.filter(
@@ -918,6 +927,34 @@ export default function PlayOfTheWeekPage() {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      </section>
+         {/* CTA */}
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-10">
+          <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+            Join The Community
+          </p>
+
+          <h2 className="mt-4 text-4xl font-black uppercase md:text-6xl">
+            More Violence.
+            <br />
+            More Profit.
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
+            Follow Rear Naked Locks for weekly betting cards,
+            fight breakdowns, parlays, and pure MMA degeneracy.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/"
+              className="rounded-full border border-white/10 px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:border-red-500/40 hover:bg-white/5"
+            >
+              Back Home
+            </Link>
           </div>
         </div>
       </section>
