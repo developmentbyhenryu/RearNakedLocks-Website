@@ -160,7 +160,9 @@ const unifiedResults = [
   ...aroundTheWorldHistory.map((bet) => ({
     event: bet.event,
     segment: "Around The World",
-    bet: bet.fighter || bet.country,
+    bet: bet.legs
+  .map((leg) => leg.fighter)
+  .join(", "),
     odds: "-",
     result: bet.parlayResult,
     units: bet.units,
