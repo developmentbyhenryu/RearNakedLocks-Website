@@ -715,7 +715,7 @@ export default function PlayOfTheWeekPage() {
             </h2>
           </div>
 
-          <div className="hidden gap-8 lg:grid lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* BEST HENRY */}
             <div className="rounded-3xl border border-green-500/20 bg-[#0d1117] p-6">
               <h3 className="text-2xl font-black uppercase text-green-400">

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,33 +12,36 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 xl:px-10">
         {/* LOGO */}
-        <div>
-          <h1 className="text-xl uppercase tracking-wide text-white md:text-2xl">
+        <Link href="/">
+          <h1 className="text-xl uppercase tracking-wide text-white transition hover:text-red-500 md:text-2xl">
             Rear Naked Locks
           </h1>
-        </div>
+        </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden gap-6 text-sm text-gray-300 md:flex">
-          {/* <a className="transition hover:text-white" href="#">
+           {/* <a className="transition hover:text-white" href="#">
             Events
           </a>
 
           <a className="transition hover:text-white" href="#">
             Fighters
-          </a>
+          </a> */}
 
-          <a className="transition hover:text-white" href="#">
+          <Link
+            href="/tracker"
+            className="transition hover:text-white"
+          >
             Tracker
-          </a>
+          </Link>
 
-          <a className="transition hover:text-white" href="#">
+          {/* <a className="transition hover:text-white" href="#">
             Articles
           </a>
 
           <a className="transition hover:text-white" href="#">
             Games
-          </a> */}
+          </a>  */}
         </div>
 
         {/* RIGHT SIDE */}
@@ -64,11 +69,13 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-white/10 bg-black px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5 text-lg text-white">
-            {/* <a href="#">Events</a>
+            <a href="#">Events</a>
             <a href="#">Fighters</a>
-            <a href="#">Tracker</a>
+            <Link href="/tracker">
+              Tracker
+            </Link>
             <a href="#">Articles</a>
-            <a href="#">Games</a> */}
+            <a href="#">Games</a> 
 
             <a
   href="https://www.youtube.com/@RearNakedLocks"
