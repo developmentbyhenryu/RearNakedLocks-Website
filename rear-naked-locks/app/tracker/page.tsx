@@ -143,7 +143,7 @@ const actionStats = calculateSegmentStats(
 );
 
 /* =========================
-   UNIFIED RESULTS TABLE
+   UNIFIED RESULTS
 ========================= */
 
 const unifiedResults = [
@@ -152,7 +152,6 @@ const unifiedResults = [
     segment: "Play Of The Week",
     bet:
       `${bet.henryPick} + ${bet.chatoPick}`,
-    odds: "-",
     result: bet.parlayResult,
     units: bet.units,
   })),
@@ -160,8 +159,9 @@ const unifiedResults = [
   ...aroundTheWorldHistory.map((bet) => ({
     event: bet.event,
     segment: "Around The World",
-    bet: bet.fighter || bet.country,
-    odds: "-",
+    bet: bet.legs
+      .map((leg) => leg.fighter)
+      .join(" + "),
     result: bet.parlayResult,
     units: bet.units,
   })),
@@ -170,7 +170,6 @@ const unifiedResults = [
     event: bet.event,
     segment: "Bark Alley",
     bet: bet.fighter,
-    odds: bet.odds,
     result: bet.result,
     units: bet.units,
   })),
@@ -181,11 +180,75 @@ const unifiedResults = [
     bet: bet.legs
       .map((leg) => leg.fighter)
       .join(" + "),
-    odds: bet.odds,
     result: bet.parlayResult,
     units: bet.units,
   })),
 ].reverse();
+
+/* =========================
+   EVENT RESULTS TABLE
+========================= */
+
+const groupedEventResults = unifiedResults.reduce(
+  (
+    acc: Record<
+      string,
+      {
+        bets: string[];
+        units: number;
+        wins: number;
+        losses: number;
+      }
+    >,
+    bet
+  ) => {
+    if (!acc[bet.event]) {
+      acc[bet.event] = {
+        bets: [],
+        units: 0,
+        wins: 0,
+        losses: 0,
+      };
+    }
+
+    acc[bet.event].bets.push(
+      `${bet.segment}: ${bet.bet}`
+    );
+
+    acc[bet.event].units += bet.units;
+
+    if (bet.result === "win") {
+      acc[bet.event].wins += 1;
+    }
+
+    if (bet.result === "loss") {
+      acc[bet.event].losses += 1;
+    }
+
+    return acc;
+  },
+  {}
+);
+
+const eventResults = Object.entries(
+  groupedEventResults
+)
+  .reverse()
+  .map(([event, data]) => ({
+  event,
+
+  bets: data.bets,
+
+  units: Number(
+    data.units.toFixed(2)
+  ),
+
+  result:
+    data.wins >= data.losses
+      ? "win"
+      : "loss",
+}));
+
 
 /* =========================
    EVENT GRAPH DATA
@@ -470,200 +533,208 @@ export default function TrackerPage() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             {/* POTW */}
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
-              <div className="relative h-[220px]">
-                <Image
-                  src="/bets/play-of-week.jpg"
-                  alt="Play Of The Week"
-                  fill
-                  className="object-cover"
-                />
+            <Link href="/bets/play-of-the-week">
+  <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
+    <div className="relative h-[220px]">
+      <Image
+        src="/bets/play-of-week.jpg"
+        alt="Play Of The Week"
+        fill
+        className="object-cover"
+      />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-4xl font-black uppercase">
-                    Play Of The Week
-                  </h3>
-                </div>
-              </div>
+      <div className="absolute bottom-0 left-0 p-6">
+        <h3 className="text-4xl font-black uppercase">
+          Play Of The Week
+        </h3>
+      </div>
+    </div>
 
-              <div className="grid grid-cols-2 gap-4 p-6">
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Record
-                  </p>
+    <div className="grid grid-cols-2 gap-4 p-6">
+      <div>
+        <p className="text-sm text-gray-400">
+          Record
+        </p>
 
-                  <p className="mt-1 text-3xl font-black text-green-400">
-                    {potwStats.wins}-{potwStats.losses}
-                  </p>
-                </div>
+        <p className="mt-1 text-3xl font-black text-green-400">
+          {potwStats.wins}-{potwStats.losses}
+        </p>
+      </div>
 
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Units
-                  </p>
+      <div>
+        <p className="text-sm text-gray-400">
+          Units
+        </p>
 
-                  <p
-                    className={`mt-1 text-3xl font-black ${
-                      potwStats.units >= 0
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
-                  >
-                    {potwStats.units > 0 ? "+" : ""}
-                    {potwStats.units.toFixed(1)}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <p
+          className={`mt-1 text-3xl font-black ${
+            potwStats.units >= 0
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {potwStats.units > 0 ? "+" : ""}
+          {potwStats.units.toFixed(1)}
+        </p>
+      </div>
+    </div>
+  </div>
+</Link>
 
             {/* BARK */}
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
-              <div className="relative h-[220px]">
-                <Image
-                  src="/bets/bark-alley.jpg"
-                  alt="Bark Alley"
-                  fill
-                  className="object-cover"
-                />
+           <Link href="/bets/bark-alley-bangers">
+  <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
+    <div className="relative h-[220px]">
+      <Image
+        src="/bets/bark-alley.jpg"
+        alt="Bark Alley"
+        fill
+        className="object-cover"
+      />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-4xl font-black uppercase">
-                    Bark Alley
-                  </h3>
-                </div>
-              </div>
+      <div className="absolute bottom-0 left-0 p-6">
+        <h3 className="text-4xl font-black uppercase">
+          Bark Alley
+        </h3>
+      </div>
+    </div>
 
-              <div className="grid grid-cols-2 gap-4 p-6">
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Record
-                  </p>
+    <div className="grid grid-cols-2 gap-4 p-6">
+      <div>
+        <p className="text-sm text-gray-400">
+          Record
+        </p>
 
-                  <p className="mt-1 text-3xl font-black text-green-400">
-                    {barkStats.wins}-{barkStats.losses}
-                  </p>
-                </div>
+        <p className="mt-1 text-3xl font-black text-green-400">
+          {barkStats.wins}-{barkStats.losses}
+        </p>
+      </div>
 
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Units
-                  </p>
+      <div>
+        <p className="text-sm text-gray-400">
+          Units
+        </p>
 
-                  <p
-                    className={`mt-1 text-3xl font-black ${
-                      barkStats.units >= 0
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
-                  >
-                    {barkStats.units > 0 ? "+" : ""}
-                    {barkStats.units.toFixed(1)}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <p
+          className={`mt-1 text-3xl font-black ${
+            barkStats.units >= 0
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {barkStats.units > 0 ? "+" : ""}
+          {barkStats.units.toFixed(1)}
+        </p>
+      </div>
+    </div>
+  </div>
+</Link>
 
             {/* ATW */}
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
-              <div className="relative h-[220px]">
-                <Image
-                  src="/bets/around-world.jpg"
-                  alt="Around The World"
-                  fill
-                  className="object-cover"
-                />
+  <Link href="/bets/around-the-world">
+  <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
+    <div className="relative h-[220px]">
+      <Image
+        src="/bets/around-world.jpg"
+        alt="Around The World"
+        fill
+        className="object-cover"
+      />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-4xl font-black uppercase">
-                    Around The World
-                  </h3>
-                </div>
-              </div>
+      <div className="absolute bottom-0 left-0 p-6">
+        <h3 className="text-4xl font-black uppercase">
+          Around The World
+        </h3>
+      </div>
+    </div>
 
-              <div className="grid grid-cols-2 gap-4 p-6">
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Record
-                  </p>
+    <div className="grid grid-cols-2 gap-4 p-6">
+      <div>
+        <p className="text-sm text-gray-400">
+          Record
+        </p>
 
-                  <p className="mt-1 text-3xl font-black text-green-400">
-                    {atwStats.wins}-{atwStats.losses}
-                  </p>
-                </div>
+        <p className="mt-1 text-3xl font-black text-green-400">
+          {atwStats.wins}-{atwStats.losses}
+        </p>
+      </div>
 
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Units
-                  </p>
+      <div>
+        <p className="text-sm text-gray-400">
+          Units
+        </p>
 
-                  <p
-                    className={`mt-1 text-3xl font-black ${
-                      atwStats.units >= 0
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
-                  >
-                    {atwStats.units > 0 ? "+" : ""}
-                    {atwStats.units.toFixed(1)}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <p
+          className={`mt-1 text-3xl font-black ${
+            atwStats.units >= 0
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {atwStats.units > 0 ? "+" : ""}
+          {atwStats.units.toFixed(1)}
+        </p>
+      </div>
+    </div>
+  </div>
+</Link>
 
             {/* ACTION */}
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
-              <div className="relative h-[220px]">
-                <Image
-                  src="/bets/all-action.jpg"
-                  alt="All Action"
-                  fill
-                  className="object-cover"
-                />
+<Link href="/bets/all-action">
+  <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
+    <div className="relative h-[220px]">
+      <Image
+        src="/bets/all-action.jpg"
+        alt="All Action"
+        fill
+        className="object-cover"
+      />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-4xl font-black uppercase">
-                    All Action
-                  </h3>
-                </div>
-              </div>
+      <div className="absolute bottom-0 left-0 p-6">
+        <h3 className="text-4xl font-black uppercase">
+          All Action
+        </h3>
+      </div>
+    </div>
 
-              <div className="grid grid-cols-2 gap-4 p-6">
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Record
-                  </p>
+    <div className="grid grid-cols-2 gap-4 p-6">
+      <div>
+        <p className="text-sm text-gray-400">
+          Record
+        </p>
 
-                  <p className="mt-1 text-3xl font-black text-green-400">
-                    {actionStats.wins}-{actionStats.losses}
-                  </p>
-                </div>
+        <p className="mt-1 text-3xl font-black text-green-400">
+          {actionStats.wins}-{actionStats.losses}
+        </p>
+      </div>
 
-                <div>
-                  <p className="text-sm text-gray-400">
-                    Units
-                  </p>
+      <div>
+        <p className="text-sm text-gray-400">
+          Units
+        </p>
 
-                  <p
-                    className={`mt-1 text-3xl font-black ${
-                      actionStats.units >= 0
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
-                  >
-                    {actionStats.units > 0 ? "+" : ""}
-                    {actionStats.units.toFixed(1)}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <p
+          className={`mt-1 text-3xl font-black ${
+            actionStats.units >= 0
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {actionStats.units > 0 ? "+" : ""}
+          {actionStats.units.toFixed(1)}
+        </p>
+      </div>
+    </div>
+  </div>
+</Link>
           </div>
         </div>
       </section>
@@ -704,14 +775,10 @@ export default function TrackerPage() {
   tick={{ fontSize: 11 }}
 />
 
-                    <YAxis
+ <YAxis
   stroke="#9ca3af"
-  domain={[
-    (dataMin: number) =>
-      Math.floor(dataMin - 1),
-    (dataMax: number) =>
-      Math.ceil(dataMax + 1),
-  ]}
+  domain={["auto", "auto"]}
+  tickCount={6}
 />
 
                     <Tooltip
@@ -804,85 +871,83 @@ export default function TrackerPage() {
             <div className="overflow-x-auto">
               <table className="w-full min-w-[900px]">
                 <thead className="border-b border-white/10 bg-black/40">
-                  <tr>
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Event
-                    </th>
+  <tr>
+    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
+      Event
+    </th>
 
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Segment
-                    </th>
+    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
+      Official Bets
+    </th>
 
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Bet
-                    </th>
+    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
+      Result
+    </th>
 
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Odds
-                    </th>
+    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
+      Units
+    </th>
+  </tr>
+</thead>
 
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Result
-                    </th>
+               <tbody>
+  {eventResults
+    .slice(0, visibleResults)
+    .map((bet) => (
+      <tr
+        key={bet.event}
+        className="border-b border-white/5"
+      >
+        <td className="px-6 py-5 font-bold text-white">
+          {bet.event}
+        </td>
 
-                    <th className="px-6 py-4 text-left text-xs uppercase tracking-[0.3em] text-gray-400">
-                      Units
-                    </th>
-                  </tr>
-                </thead>
+        <td className="px-6 py-5 text-white">
+          <div className="space-y-2">
+            {bet.bets.map(
+              (
+                singleBet,
+                index
+              ) => (
+                <p
+                  key={index}
+                  className="text-sm text-gray-300"
+                >
+                  {singleBet}
+                </p>
+              )
+            )}
+          </div>
+        </td>
 
-                <tbody>
-                  {unifiedResults
-                    .slice(0, visibleResults)
-                    .map((bet) => (
-                      <tr
-                        key={`${bet.event}-${bet.segment}`}
-                        className="border-b border-white/5"
-                      >
-                        <td className="px-6 py-5 font-bold text-white">
-                          {bet.event}
-                        </td>
+        <td
+          className={`px-6 py-5 font-black ${
+            bet.result === "win"
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {bet.result.toUpperCase()}
+        </td>
 
-                        <td className="px-6 py-5 text-gray-300">
-                          {bet.segment}
-                        </td>
-
-                        <td className="px-6 py-5 text-white">
-                          {bet.bet}
-                        </td>
-
-                        <td className="px-6 py-5 text-white">
-                          {bet.odds}
-                        </td>
-
-                        <td
-                          className={`px-6 py-5 font-black ${
-                            bet.result === "win"
-                              ? "text-green-400"
-                              : "text-red-400"
-                          }`}
-                        >
-                          {bet.result.toUpperCase()}
-                        </td>
-
-                        <td
-                          className={`px-6 py-5 font-black ${
-                            bet.units >= 0
-                              ? "text-green-400"
-                              : "text-red-400"
-                          }`}
-                        >
-                          {bet.units > 0 ? "+" : ""}
-                          {bet.units}
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
+        <td
+          className={`px-6 py-5 font-black ${
+            bet.units >= 0
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          {bet.units > 0 ? "+" : ""}
+          {bet.units}
+        </td>
+      </tr>
+    ))}
+</tbody>
               </table>
             </div>
 
-            {visibleResults <
-              unifiedResults.length && (
+            {visibleResults < 
+            eventResults.length && (
               <div className="p-6 text-center">
                 <button
                   onClick={() =>
