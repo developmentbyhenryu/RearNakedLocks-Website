@@ -10,60 +10,77 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 xl:px-10">
-        {/* LOGO */}
-        <Link href="/">
-          <h1 className="text-xl uppercase tracking-wide text-white transition hover:text-red-500 md:text-2xl">
-            Rear Naked Locks
-          </h1>
-        </Link>
+<nav className="flex items-center justify-between px-8 py-5 xl:px-14">
+  {/* LEFT - LOGO */}
+  <Link href="/">
+    <h1 className="text-2xl font-medium uppercase tracking-wide text-white transition hover:text-red-400">
+      Rear Naked Locks
+    </h1>
+  </Link>
 
-        {/* DESKTOP NAV */}
-        <div className="hidden gap-6 text-sm text-gray-300 md:flex">
-           <a className="transition hover:text-white" href="#">
-            Events
-          </a>
+  {/* RIGHT SIDE */}
+  <div className="flex items-center gap-10">
+    {/* DESKTOP NAV */}
+    <div className="hidden items-center gap-8 text-sm font-medium text-gray-300 lg:flex">
+      <a
+        className="transition hover:text-white"
+        href="#"
+      >
+        Events
+      </a>
 
-          <a className="transition hover:text-white" href="#">
-            Fighters
-          </a> 
+      <a
+        className="transition hover:text-white"
+        href="#"
+      >
+        Fighters
+      </a>
 
-          <Link
-            href="/tracker"
-            className="transition hover:text-white"
-          >
-            Tracker
-          </Link>
+      <Link
+        href="/tracker"
+        className="transition hover:text-white"
+      >
+        Tracker
+      </Link>
 
-          <a className="transition hover:text-white" href="#">
-            Articles
-          </a>
+      <a
+        className="transition hover:text-white"
+        href="#"
+      >
+        Articles
+      </a>
 
-          <a className="transition hover:text-white" href="#">
-            Games
-          </a> 
-        </div>
+      <a
+        className="transition hover:text-white"
+        href="#"
+      >
+        Games
+      </a>
+    </div>
 
-        {/* RIGHT SIDE */}
-        <div className="flex items-center gap-4">
-          <a
-  href="https://www.youtube.com/@RearNakedLocks"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="hidden rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-500 md:block"
->
-  YouTube
-</a>
+    {/* YOUTUBE BUTTON */}
+    <a
+      href="https://www.youtube.com/@RearNakedLocks"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hidden rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-red-500 md:block"
+    >
+      YouTube
+    </a>
 
-          {/* MOBILE MENU BUTTON */}
-          <button
-            className="text-white md:hidden"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </nav>
+    {/* MOBILE MENU BUTTON */}
+    <button
+      className="text-white md:hidden"
+      onClick={() => setOpen(!open)}
+    >
+      {open ? (
+        <X size={28} />
+      ) : (
+        <Menu size={28} />
+      )}
+    </button>
+  </div>
+</nav>
 
       {/* MOBILE MENU */}
       {open && (
