@@ -20,13 +20,13 @@ export default function Navbar() {
 
         {/* DESKTOP NAV */}
         <div className="hidden gap-6 text-sm text-gray-300 md:flex">
-           {/* <a className="transition hover:text-white" href="#">
+           <a className="transition hover:text-white" href="#">
             Events
           </a>
 
           <a className="transition hover:text-white" href="#">
             Fighters
-          </a> */}
+          </a> 
 
           <Link
             href="/tracker"
@@ -35,13 +35,13 @@ export default function Navbar() {
             Tracker
           </Link>
 
-          {/* <a className="transition hover:text-white" href="#">
+          <a className="transition hover:text-white" href="#">
             Articles
           </a>
 
           <a className="transition hover:text-white" href="#">
             Games
-          </a>  */}
+          </a> 
         </div>
 
         {/* RIGHT SIDE */}
