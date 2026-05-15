@@ -8,7 +8,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC Allen vs Costa
+          UFC Song VS Figueiredo
         </h2>
       </div>
 
@@ -20,7 +20,7 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Chimaev <br /> vs Strickland
+              Allen <br /> vs Costa
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
@@ -39,7 +39,7 @@ export default function FeaturedEvent() {
           <div
   className="min-h-[350px] bg-cover bg-center"
   style={{
-    backgroundImage: "url('/events/ufc-328.jpg')",
+    backgroundImage: "url('/events/poster.jpg')",
   }}
 />
         </div>
