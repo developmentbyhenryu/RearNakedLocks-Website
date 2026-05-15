@@ -160,8 +160,9 @@ const unifiedResults = [
     event: bet.event,
     segment: "Around The World",
     bet: bet.legs
-      .map((leg) => leg.fighter)
-      .join(" + "),
+  .map((leg) => leg.fighter)
+  .join(", "),
+    odds: "-",
     result: bet.parlayResult,
     units: bet.units,
   })),
