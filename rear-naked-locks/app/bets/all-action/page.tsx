@@ -299,9 +299,9 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Jose
+            Malcom 
             <br />
-            Ochoa
+            Wellmaker
           </h3>
         </div>
       </div>
@@ -313,12 +313,12 @@ export default function AllActionPage() {
           </p>
 
           <p className="mt-1 text-xl font-black text-red-400">
-            Pressure & Chaos
+            Power 
           </p>
         </div>
 
         <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-          Action Approved
+          Knockout Guaranteed
         </div>
       </div>
     </div>
@@ -341,9 +341,9 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Sean
+            Khaos
             <br />
-            Brady
+            Williams
           </h3>
         </div>
       </div>
@@ -375,7 +375,7 @@ export default function AllActionPage() {
         </p>
 
         <h3 className="mt-3 text-4xl font-black uppercase">
-          Ochoa + Brady
+          Wellmaker + Williams
         </h3>
       </div>
 

@@ -506,7 +506,7 @@ export default function PlayOfTheWeekPage() {
         </p>
 
         <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">
-          UFC 328
+          UFC Allen vs Costa
         </h2>
 
         <div className="mt-8 space-y-6">
@@ -517,7 +517,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Grant Dawson
+              Tommy Gantt
             </h3>
           </div>
 
@@ -528,7 +528,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Jared Gordon
+              Modestas Bukauskas
             </h3>
           </div>
 

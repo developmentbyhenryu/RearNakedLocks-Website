@@ -157,7 +157,7 @@ export default function AroundTheWorldPage() {
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-              UFC 328
+              UFC Allen Vs Costa
             </p>
 
             <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
@@ -186,11 +186,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Country 1
+                USA
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Fighter 1
+                Tommy Gantt
                 <br />
                 ML
               </h3>
@@ -228,11 +228,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Country 2
+                Romania
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Fighter 2
+                Alice Ardelean
                 <br />
                 ML
               </h3>
@@ -244,7 +244,7 @@ export default function AroundTheWorldPage() {
                   </p>
 
                   <p className="text-xl font-black text-white">
-                    Medium
+                    High
                   </p>
                 </div>
 
@@ -268,11 +268,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Country 3
+                Lithuania
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Fighter 3
+                Modestas Bukauskas
                 <br />
                 ML
               </h3>
@@ -284,7 +284,7 @@ export default function AroundTheWorldPage() {
                   </p>
 
                   <p className="text-xl font-black text-white">
-                    Wild
+                    High
                   </p>
                 </div>
 
