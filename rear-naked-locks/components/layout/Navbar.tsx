@@ -21,42 +21,42 @@ export default function Navbar() {
   {/* RIGHT SIDE */}
   <div className="flex items-center gap-10">
     {/* DESKTOP NAV */}
-    <div className="hidden items-center gap-8 text-sm font-medium text-gray-300 lg:flex">
-      <a
-        className="transition hover:text-white"
-        href="#"
-      >
-        Events
-      </a>
+<div className="hidden items-center gap-8 text-sm font-medium text-gray-300 lg:flex">
+  <Link
+    href="/events"
+    className="transition hover:text-white"
+  >
+    Events
+  </Link>
 
-      <a
-        className="transition hover:text-white"
-        href="#"
-      >
-        Fighters
-      </a>
+  <Link
+    href="/fighters"
+    className="transition hover:text-white"
+  >
+    Fighters
+  </Link>
 
-      <Link
-        href="/tracker"
-        className="transition hover:text-white"
-      >
-        Tracker
-      </Link>
+  <Link
+    href="/tracker"
+    className="transition hover:text-white"
+  >
+    Tracker
+  </Link>
 
-      <a
-        className="transition hover:text-white"
-        href="#"
-      >
-        Articles
-      </a>
+  <Link
+    href="/articles"
+    className="transition hover:text-white"
+  >
+    Articles
+  </Link>
 
-      <a
-        className="transition hover:text-white"
-        href="#"
-      >
-        Games
-      </a>
-    </div>
+  <Link
+    href="/games"
+    className="transition hover:text-white"
+  >
+    Games
+  </Link>
+</div>
 
     {/* YOUTUBE BUTTON */}
     <a
@@ -84,26 +84,36 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="border-t border-white/10 bg-black px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5 text-lg text-white">
-            <a href="#">Events</a>
-            <a href="#">Fighters</a>
-            <Link href="/tracker">
-              Tracker
-            </Link>
-            <a href="#">Articles</a>
-            <a href="#">Games</a> 
+<div className="flex flex-col gap-5 text-lg text-white">
+  <Link href="/events">
+    Events
+  </Link>
 
-            <a
-  href="https://www.youtube.com/@RearNakedLocks"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-4 rounded-full bg-red-600 px-4 py-3 text-center font-semibold text-white"
->
-  YouTube
-</a>
-          </div>
-        </div>
+  <Link href="/fighters">
+    Fighters
+  </Link>
+
+  <Link href="/tracker">
+    Tracker
+  </Link>
+
+  <Link href="/articles">
+    Articles
+  </Link>
+
+  <Link href="/games">
+    Games
+  </Link>
+
+  <a
+    href="https://www.youtube.com/@RearNakedLocks"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-4 rounded-full bg-red-600 px-4 py-3 text-center font-semibold text-white"
+  >
+    YouTube
+  </a>
+</div>
       )}
     </header>
   );
