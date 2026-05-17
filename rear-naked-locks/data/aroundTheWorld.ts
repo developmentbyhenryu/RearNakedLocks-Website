@@ -1,4 +1,31 @@
 export const aroundTheWorldHistory = [
+{
+    event: "UFC Allen vs Costa",
+
+    parlayResult: "win",
+
+    units: 1.67,
+
+    legs: [
+      {
+        country: "USA",
+        fighter: "Tommy Gantt",
+        result: "win",
+      },
+
+      {
+        country: "Romania",
+        fighter: "Alice Ardelean",
+        result: "win",
+      },
+
+      {
+        country: "Lithuania",
+        fighter: "Modestas Bukauskas",
+        result: "win",
+      },
+    ],
+  },
   {
     event: "UFC 328",
 

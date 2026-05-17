@@ -1,4 +1,39 @@
 export const allActionHistory = [
+{
+    event: "UFC Allen vs Costa",
+    
+    odds: "+141",
+    
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        fighter: "Malcolm Wellmaker",
+
+        result: "loss",
+
+        method: "submission",
+
+        round: 2,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Khaos Williams",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
   {
     event: "UFC 328",
     

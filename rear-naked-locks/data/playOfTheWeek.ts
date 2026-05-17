@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
   {
+    event: "UFC Allen vs Costa",
+
+    henryPick: "Tommy Gantt",
+    henryResult: "win",
+
+    chatoPick: "Modestas Bukauskas",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.79,
+  },
+  {
     event: "UFC 328",
 
     henryPick: "Grant Dawson",

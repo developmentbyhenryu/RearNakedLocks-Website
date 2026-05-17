@@ -1,4 +1,21 @@
 export const barkAlleyHistory = [
+   {
+    event: "UFC Allen vs Costa",
+
+    fighter: "Doo Ho Choi",
+
+    weightClass: "Featherweight",
+
+    odds: "+130",
+
+    result: "win",
+
+    methodOfVictory: "knockout",
+
+    methodOfLoss: null,
+
+    units: 1.30,
+  },
   {
     event: "UFC 328",
 
