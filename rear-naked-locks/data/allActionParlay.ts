@@ -1,5 +1,86 @@
 export const allActionHistory = [
 {
+    event: "UFC Muhammad vs Bonfim",
+    
+    odds: "+105",
+    
+    parlayResult: "win",
+
+    units: 1.05,
+
+    legs: [
+      {
+        fighter: "Ketlen Souza",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Iwo Baraniewski",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+
+        isFinish: true,
+      },
+      {
+        fighter: "Jeisla Chaves",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+
+        isFinish: false,
+      },
+    ],
+  },
+{
+    event: "UFC Song vs Figueiredo",
+    
+    odds: "+138",
+    
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        fighter: "Zhang Mingyang",
+
+        result: "loss",
+
+        method: "knockout",
+
+        round: 1,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Ding Meng",
+
+        result: "loss",
+
+        method: "decision",
+
+        round: 3,
+
+        isFinish: false,
+      },
+    ],
+  },
+  {
     event: "UFC Allen vs Costa",
     
     odds: "+141",

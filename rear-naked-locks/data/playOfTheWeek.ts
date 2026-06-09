@@ -1,5 +1,31 @@
 export const playOfTheWeekHistory = [
   {
+    event: "UFC Muhammad vs Bonfim",
+
+    henryPick: "Ketlen Souza",
+    henryResult: "win",
+
+    chatoPick: "Fares Ziam",
+    chatoResult: "loss",
+
+    parlayResult: "loss",
+
+    units: -1,
+  },
+  {
+    event: "UFC Song vs Figueiredo",
+
+    henryPick: "Cody Haddon",
+    henryResult: "win",
+
+    chatoPick: "Jake Matthews",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.59,
+  },
+  {
     event: "UFC Allen vs Costa",
 
     henryPick: "Tommy Gantt",

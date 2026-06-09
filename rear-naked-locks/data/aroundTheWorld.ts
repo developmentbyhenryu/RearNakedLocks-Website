@@ -1,5 +1,59 @@
 export const aroundTheWorldHistory = [
 {
+    event: "UFC Muhammad vs Bonfim",
+
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        country: "Palestine",
+        fighter: "Belal Muhammad",
+        result: "loss",
+      },
+
+      {
+        country: "USA",
+        fighter: "Brendan Allen",
+        result: "win",
+      },
+
+      {
+        country: "France",
+        fighter: "Fares Ziam",
+        result: "loss",
+      },
+    ],
+  },
+  {
+    event: "UFC Song vs Figueiredo",
+
+    parlayResult: "win",
+
+    units: 0.99,
+
+    legs: [
+      {
+        country: "Australia",
+        fighter: "Jake Matthews",
+        result: "win",
+      },
+
+      {
+        country: "Japan",
+        fighter: "Kai Asakura",
+        result: "win",
+      },
+
+      {
+        country: "China",
+        fighter: "Song Yadong",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Allen vs Costa",
 
     parlayResult: "win",

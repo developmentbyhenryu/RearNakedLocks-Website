@@ -1,5 +1,39 @@
 export const barkAlleyHistory = [
-   {
+  {
+    event: "UFC Muhammad vs Bonfim",
+
+    fighter: "Edgar Chairez",
+
+    weightClass: "Flyweight",
+
+    odds: "+105",
+
+    result: "win",
+
+    methodOfVictory: "submission",
+
+    methodOfLoss: null,
+
+    units: 1.05,
+  }, 
+  {
+    event: "UFC Song vs Figueiredo",
+
+    fighter: "Yisak Lee",
+
+    weightClass: "Middleweight",
+
+    odds: "+130",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "knockout",
+
+    units: -1,
+  }, 
+  {
     event: "UFC Allen vs Costa",
 
     fighter: "Doo Ho Choi",
