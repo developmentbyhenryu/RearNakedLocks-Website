@@ -3,6 +3,7 @@ import StatsBar from "@/components/stats/StatsBar";
 import WeeklyBets from "@/components/bets/WeeklyBets";
 import FeaturedEvent from "@/components/events/FeaturedEvent";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
+import RecentResults from "@/components/home/RecentResults";
 
 
 export default function HomePage() {
@@ -13,9 +14,11 @@ export default function HomePage() {
         
         <StatsBar />
 
+        <FeaturedEvent />
+
         <WeeklyBets />
 
-        <FeaturedEvent />
+        <RecentResults />
 
         <BreakdownVideo />
       </div>
