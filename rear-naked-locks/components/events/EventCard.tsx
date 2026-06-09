@@ -3,7 +3,9 @@ import Link from "next/link";
 
 export default function EventCard({
   event,
-}: any) {
+}: {
+  event: any;
+}) {
   return (
     <Link href={`/events/${event.slug}`}>
       <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
@@ -15,10 +17,16 @@ export default function EventCard({
             className="object-cover transition duration-700 group-hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
           <div className="absolute bottom-0 left-0 p-6">
-            <p className="text-xs uppercase tracking-[0.35em] text-red-400">
+            <p
+              className={`text-xs uppercase tracking-[0.35em] ${
+                event.status === "upcoming"
+                  ? "text-green-400"
+                  : "text-gray-400"
+              }`}
+            >
               {event.status}
             </p>
 
@@ -27,8 +35,12 @@ export default function EventCard({
             </h3>
 
             <p className="mt-3 text-gray-300">
-                {event.mainEvent.fighterA.name} vs{" "}
-                {event.mainEvent.fighterB.name}
+              {event.mainEvent.fighterA.name} vs{" "}
+              {event.mainEvent.fighterB.name}
+            </p>
+
+            <p className="mt-2 text-sm text-gray-500">
+              {event.location}
             </p>
           </div>
         </div>

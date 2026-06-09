@@ -4,24 +4,24 @@ export const events = [
        BASIC EVENT INFO
     ========================= */
 
-    slug: "ufc-329",
+    slug: "ufc-freedom-250",
 
-    name: "UFC 329",
+    name: "UFC Freedom 250",
 
-    shortName: "UFC 329",
+    shortName: "UFC Freedom 250",
 
-    date: "June 20, 2026",
+    date: "June 14, 2026",
 
-    location: "Las Vegas, Nevada",
+    location: "The White House, Washington United States",
 
-    venue: "T-Mobile Arena",
+    venue: "White House Lawn",
 
     status: "upcoming",
     // upcoming | live | completed
 
-    poster: "/events/ufc-329/poster.jpg",
+    poster: "/events/ufc-freedom-250/poster.jpg",
 
-    banner: "/events/ufc-329/banner.jpg",
+    banner: "/events/ufc-freedom-250/banner.jpg",
 
     countdown: true,
 
@@ -31,17 +31,6 @@ export const events = [
 
     mainEvent: {
       fighterA: {
-        name: "Islam Makhachev",
-
-        image:
-          "/fighters/islam-makhachev.png",
-
-        record: "28-1",
-
-        country: "Russia",
-      },
-
-      fighterB: {
         name: "Ilia Topuria",
 
         image:
@@ -49,7 +38,18 @@ export const events = [
 
         record: "17-0",
 
-        country: "Spain",
+        country: "Georgia",
+      },
+
+      fighterB: {
+        name: "Justin Gaethje",
+
+        image:
+          "/fighters/justin-gaethje.png",
+
+        record: "27-5",
+
+        country: "USA",
       },
 
       weightClass: "Lightweight",
@@ -63,22 +63,22 @@ export const events = [
 
     coMainEvent: {
       fighterA: {
-        name: "Shavkat Rakhmonov",
+        name: "Alex Pereira",
 
         image:
-          "/fighters/shavkat-rakhmonov.png",
+          "/fighters/alex-pereira.png",
       },
 
       fighterB: {
-        name: "Colby Covington",
+        name: "Ciryl Gane",
 
         image:
-          "/fighters/colby-covington.png",
+          "/fighters/ciryl-gane.png",
       },
 
-      weightClass: "Welterweight",
+      weightClass: "Heavyweight",
 
-      rounds: 3,
+      rounds: 5,
     },
 
     /* =========================
@@ -89,22 +89,104 @@ export const events = [
       youtubeId: "5B3-wKlUCCk",
 
       title:
-        "UFC 329 Full Betting Breakdown",
+        "UFC Freedom 250 Full Betting Breakdown",
+    },
+ /* =========================
+       Individual PICKS
+    ========================= */
+
+    individualPicks: {
+  henry: [
+    {
+      fighter: "Ilia Topuria",
+      odds: "-670",
+      confidence: 10,
     },
 
-    /* =========================
-       OFFICIAL PICKS
-    ========================= */
+    {
+      fighter: "Ciryl Gane",
+      odds: "-110",
+      confidence: 6,
+    },
+
+    {
+      fighter: "Josh Hokit",
+      odds: "-400",
+      confidence: 9,
+    },
+    {
+      fighter: "Sean O'Malley",
+      odds: "-430",
+      confidence: 9,
+    },
+    {
+      fighter: "Mauricio Ruffy",
+      odds: "-650",
+      confidence: 8,
+    },
+    {
+      fighter: "Bo Nickal",
+      odds: "-330",
+      confidence: 7,
+    },
+    {
+      fighter: "Diego Lopes",
+      odds: "-174",
+      confidence: 6,
+    },
+  ],
+
+  chato: [
+    {
+      fighter: "Ilia Topuria",
+      odds: "-670",
+      confidence: 10,
+    },
+
+    {
+      fighter: "Ciryl Gane",
+      odds: "-110",
+      confidence: 6,
+    },
+
+    {
+      fighter: "Josh Hokit",
+      odds: "-400",
+      confidence: 9,
+    },
+    {
+      fighter: "Sean O'Malley",
+      odds: "-430",
+      confidence: 9,
+    },
+    {
+      fighter: "Mauricio Ruffy",
+      odds: "-650",
+      confidence: 8,
+    },
+    {
+      fighter: "Bo Nickal",
+      odds: "-330",
+      confidence: 7,
+    },
+    {
+      fighter: "Diego Lopes",
+      odds: "-174",
+      confidence: 6,
+    },
+  ],
+},
+   
 
     officialPicks: {
       playOfTheWeek: {
         henryPick:
-          "Islam Makhachev",
+          "Ilia Topuria",
 
         chatoPick:
-          "Shavkat Rakhmonov",
+          "Sean O'Malley",
 
-        odds: "-120",
+        odds: "-240",
 
         result: null,
         // win | loss | push
@@ -114,9 +196,9 @@ export const events = [
 
       barkAlley: {
         fighter:
-          "Mateusz Gamrot",
+          "Ciryl Gane",
 
-        odds: "+145",
+        odds: "-110",
 
         result: null,
 
@@ -130,34 +212,34 @@ export const events = [
       aroundTheWorld: {
         countries: [
           {
-            country: "Brazil",
+            country: "USA",
 
             fighter:
-              "Charles Oliveira",
+              "Josh Hokit",
 
             result: null,
           },
 
           {
-            country: "Mexico",
+            country: "USA",
 
             fighter:
-              "Yair Rodriguez",
+              "Sean O'Malley",
 
             result: null,
           },
 
           {
-            country: "Russia",
+            country: "USA",
 
             fighter:
-              "Islam Makhachev",
+              "Bo Nickal",
 
             result: null,
           },
         ],
 
-        parlayOdds: "+425",
+        parlayOdds: "+101",
 
         result: null,
 
@@ -168,26 +250,20 @@ export const events = [
         legs: [
           {
             fighter:
-              "Dustin Poirier",
-
-            method:
-              "Inside The Distance",
+              "Josh Hokit",
 
             result: null,
           },
 
           {
             fighter:
-              "Justin Gaethje",
-
-            method:
-              "Inside The Distance",
+              "Diego Lopes",
 
             result: null,
           },
         ],
 
-        parlayOdds: "+600",
+        parlayOdds: "-103",
 
         result: null,
 
@@ -203,16 +279,16 @@ export const events = [
       mainCard: [
         {
           fighterA:
-            "Islam Makhachev",
+            "Ilia Topuria",
 
           fighterB:
-            "Ilia Topuria",
+            "Justin Gaethje",
 
           weightClass:
             "Lightweight",
 
           predictedWinner:
-            "Islam Makhachev",
+            "Ilia Topuria",
 
           confidence: 8,
 
@@ -221,16 +297,101 @@ export const events = [
 
         {
           fighterA:
-            "Shavkat Rakhmonov",
+            "Alex Pereira",
 
           fighterB:
-            "Colby Covington",
+            "Cirly Gane",
 
           weightClass:
-            "Welterweight",
+            "Heavyweight",
 
           predictedWinner:
-            "Shavkat Rakhmonov",
+            "Ciryl Gane",
+
+          confidence: 9,
+
+          result: null,
+        },
+        {
+          fighterA:
+            "Sean O'Malley",
+
+          fighterB:
+            "Aiemann Zahabi",
+
+          weightClass:
+            "Bantamweight",
+
+          predictedWinner:
+            "Sean O'Malley",
+
+          confidence: 9,
+
+          result: null,
+        },
+        {
+          fighterA:
+            "Josh Hokit",
+
+          fighterB:
+            "Derick Lewis",
+
+          weightClass:
+            "Heavyweight",
+
+          predictedWinner:
+            "Josh Hokit",
+
+          confidence: 9,
+
+          result: null,
+        },
+        {
+          fighterA:
+            "Mauricio Ruffy",
+
+          fighterB:
+            "Michael Chandler",
+
+          weightClass:
+            "Lightweight",
+
+          predictedWinner:
+            "Mauricio Ruffy",
+
+          confidence: 9,
+
+          result: null,
+        },
+        {
+          fighterA:
+            "Bo Nickal",
+
+          fighterB:
+            "Kyle Daukaus",
+
+          weightClass:
+            "Middleweight",
+
+          predictedWinner:
+            "Bo Nickal",
+
+          confidence: 9,
+
+          result: null,
+        },
+        {
+          fighterA:
+            "Diego Lopes",
+
+          fighterB:
+            "Steve Garcia",
+
+          weightClass:
+            "Featherweight",
+
+          predictedWinner:
+            "Diego Lopes",
 
           confidence: 9,
 
@@ -241,18 +402,18 @@ export const events = [
       prelims: [
         {
           fighterA:
-            "Mateusz Gamrot",
+            "",
 
           fighterB:
-            "Benoit Saint Denis",
+            "",
 
           weightClass:
-            "Lightweight",
+            "",
 
           predictedWinner:
-            "Mateusz Gamrot",
+            " ",
 
-          confidence: 7,
+          confidence: 0,
 
           result: null,
         },
