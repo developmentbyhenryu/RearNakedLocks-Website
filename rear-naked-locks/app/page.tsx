@@ -3,8 +3,8 @@ import StatsBar from "@/components/stats/StatsBar";
 import WeeklyBets from "@/components/bets/WeeklyBets";
 import FeaturedEvent from "@/components/events/FeaturedEvent";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
+import Footer from "@/components/layout/Footer";
 import RecentResults from "@/components/home/RecentResults";
-
 
 export default function HomePage() {
   return (
@@ -21,6 +21,8 @@ export default function HomePage() {
         <RecentResults />
 
         <BreakdownVideo />
+
+        <Footer />
       </div>
     </main>
   );
