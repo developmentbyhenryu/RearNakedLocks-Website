@@ -248,20 +248,17 @@ export const events = [
 
       allAction: {
         legs: [
-          {
-            fighter:
-              "Josh Hokit",
-
-            result: null,
-          },
-
-          {
-            fighter:
-              "Diego Lopes",
-
-            result: null,
-          },
-        ],
+  {
+    fighter: "Josh Hokit",
+    method: "",
+    result: null,
+  },
+  {
+    fighter: "Diego Lopes",
+    method: "",
+    result: null,
+  },
+],
 
         parlayOdds: "-103",
 

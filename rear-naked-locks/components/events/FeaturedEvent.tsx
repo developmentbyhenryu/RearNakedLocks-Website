@@ -20,20 +20,26 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Allen <br /> vs Costa
+              Topuria <br /> vs Gaethje
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
-              Full breakdowns, betting analysis, and predictions for UFC 328.
+              Full breakdowns, betting analysis, and predictions for UFC Freedom 250.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <a href="#video-breakdown">
-                            <Button >
-                            Watch Breakdown
-                            </Button>
-                          </a>
-            </div>
+  <a href="#video-breakdown">
+    <Button>
+      Watch Breakdown
+    </Button>
+  </a>
+
+  <a href="/events/ufc-freedom-250">
+    <Button variant="secondary">
+      View Picks
+    </Button>
+  </a>
+</div>
           </div>
 
           <div

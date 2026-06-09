@@ -29,12 +29,12 @@ export default function Navbar() {
     Events
   </Link>
 
-  <Link
+  {/* <Link
     href="/fighters"
     className="transition hover:text-white"
   >
     Fighters
-  </Link>
+  </Link> */}
 
   <Link
     href="/tracker"
@@ -43,7 +43,7 @@ export default function Navbar() {
     Tracker
   </Link>
 
-  <Link
+  {/* <Link
     href="/articles"
     className="transition hover:text-white"
   >
@@ -55,7 +55,7 @@ export default function Navbar() {
     className="transition hover:text-white"
   >
     Games
-  </Link>
+  </Link> */}
 </div>
 
     {/* YOUTUBE BUTTON */}
@@ -89,21 +89,21 @@ export default function Navbar() {
     Events
   </Link>
 
-  <Link href="/fighters">
+  {/* <Link href="/fighters">
     Fighters
-  </Link>
+  </Link> */}
 
   <Link href="/tracker">
     Tracker
   </Link>
 
-  <Link href="/articles">
+  {/* <Link href="/articles">
     Articles
   </Link>
 
   <Link href="/games">
     Games
-  </Link>
+  </Link> */}
 
   <a
     href="https://www.youtube.com/@RearNakedLocks"

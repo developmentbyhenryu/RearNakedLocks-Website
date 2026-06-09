@@ -43,14 +43,14 @@ export default function EventsPage() {
             </h2>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          {/* <div className="grid gap-8 lg:grid-cols-2">
             {remainingEvents.map((event) => (
               <EventCard
                 key={event.slug}
                 event={event}
               />
             ))}
-          </div>
+          </div> */}
         </section>
       </div>
     </main>
