@@ -70,7 +70,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://x.com"
+                href="https://x.com/rearnaked_locks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-white"
@@ -79,7 +79,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/rearnaked_locks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-white"
