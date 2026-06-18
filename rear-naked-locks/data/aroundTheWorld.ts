@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
 {
+    event: "UFC Freedom 250 Topuria vs Gaethje",
+
+    parlayResult: "win",
+
+    units: 0.89,
+
+    legs: [
+      {
+        country: "USA",
+        fighter: "Bo Nickal",
+        result: "win",
+      },
+
+      {
+        country: "USA",
+        fighter: "Josh Hokit",
+        result: "win",
+      },
+
+      {
+        country: "USA",
+        fighter: "Sean O'Malley",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Muhammad vs Bonfim",
 
     parlayResult: "loss",

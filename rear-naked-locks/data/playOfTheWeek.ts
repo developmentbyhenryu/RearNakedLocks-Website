@@ -1,4 +1,17 @@
 export const playOfTheWeekHistory = [
+    {
+    event: "UFC Freedom 250 Topuria vs Gaethje",
+
+    henryPick: "Ilia Topuria",
+    henryResult: "loss",
+
+    chatoPick: "Sean O'Malley",
+    chatoResult: "win",
+
+    parlayResult: "loss",
+
+    units: -1,
+  },
   {
     event: "UFC Muhammad vs Bonfim",
 

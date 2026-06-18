@@ -1,5 +1,22 @@
 export const barkAlleyHistory = [
   {
+    event: "UFC Freedom 250 Topuria vs Gaethje",
+
+    fighter: "Ciryl Gane",
+
+    weightClass: "Heavyweight",
+
+    odds: "-108",
+
+    result: "win",
+
+    methodOfVictory: "knockout",
+
+    methodOfLoss: null,
+
+    units: 0.93,
+  }, 
+  {
     event: "UFC Muhammad vs Bonfim",
 
     fighter: "Edgar Chairez",

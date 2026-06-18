@@ -1,5 +1,40 @@
 export const allActionHistory = [
 {
+    event: "UFC Freedom 250 Topuria vs Gaethje",
+    
+    odds: "-109",
+    
+    parlayResult: "win",
+
+    units: 0.92,
+
+    legs: [
+      {
+        fighter: "Diego Lopes",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 2,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Josh Hokit",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 2,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Muhammad vs Bonfim",
     
     odds: "+105",
