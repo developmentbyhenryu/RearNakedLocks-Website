@@ -1,4 +1,21 @@
 export const barkAlleyHistory = [
+    {
+    event: "UFC Kape vs Horiguchi",
+
+    fighter: "Mitch Raposo",
+
+    weightClass: "Flyweight",
+
+    odds: "+165",
+
+    result: "win",
+
+    methodOfVictory: "decision",
+
+    methodOfLoss: null,
+
+    units: 1.65,
+  }, 
   {
     event: "UFC Freedom 250 Topuria vs Gaethje",
 

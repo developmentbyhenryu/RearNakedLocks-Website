@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
-    {
+      {
+    event: "UFC Kape vs Horiguchi",
+
+    henryPick: "Murtazali Magomedov",
+    henryResult: "win",
+
+    chatoPick: "Navajo Stirling",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.7,
+  },  
+  {
     event: "UFC Freedom 250 Topuria vs Gaethje",
 
     henryPick: "Ilia Topuria",

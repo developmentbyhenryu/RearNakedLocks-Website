@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
 {
+    event: "UFC Kape vs Horiguchi",
+
+    parlayResult: "win",
+
+    units: 1.79,
+
+    legs: [
+      {
+        country: "New Zealand",
+        fighter: "Navajo Stirling",
+        result: "win",
+      },
+
+      {
+        country: "USA",
+        fighter: "Christian Rodriguez",
+        result: "win",
+      },
+
+      {
+        country: "Brazil",
+        fighter: "Vinicius Oliveira",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Freedom 250 Topuria vs Gaethje",
 
     parlayResult: "win",

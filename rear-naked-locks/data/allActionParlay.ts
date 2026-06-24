@@ -1,5 +1,40 @@
 export const allActionHistory = [
 {
+    event: "UFC Kape vs Horiguchi",
+    
+    odds: "-101",
+    
+    parlayResult: "win",
+
+    units: 0.99,
+
+    legs: [
+      {
+        fighter: "Shane Collins",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+        
+        isFinish: false,
+      },
+
+      {
+        fighter: "Murtazali Magomedov",
+
+        result: "win",
+
+        method: "submission",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Freedom 250 Topuria vs Gaethje",
     
     odds: "-109",
