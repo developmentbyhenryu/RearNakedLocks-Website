@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
       {
+    event: "UFC Fiziev vs Torres",
+
+    henryPick: "Nurzilton Ruziboev",
+    henryResult: "win",
+
+    chatoPick: "Daniil Donchenko",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.76,
+  }, 
+  {
     event: "UFC Kape vs Horiguchi",
 
     henryPick: "Murtazali Magomedov",

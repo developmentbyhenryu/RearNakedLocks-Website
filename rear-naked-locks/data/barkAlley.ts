@@ -1,5 +1,22 @@
 export const barkAlleyHistory = [
-    {
+   {
+    event: "UFC Fiziev vs Torres",
+
+    fighter: "Manuel Torres",
+
+    weightClass: "Lightweight",
+
+    odds: "-108",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "knockout",
+
+    units: -1,
+  }, 
+  {
     event: "UFC Kape vs Horiguchi",
 
     fighter: "Mitch Raposo",

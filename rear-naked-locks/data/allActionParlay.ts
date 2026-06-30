@@ -1,5 +1,40 @@
 export const allActionHistory = [
 {
+    event: "UFC Fiziev vs Torres",
+    
+    odds: "+126",
+    
+    parlayResult: "win",
+
+    units: 1.26,
+
+    legs: [
+      {
+        fighter: "Jean Matsumoto",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+        
+        isFinish: false,
+      },
+
+      {
+        fighter: "Nurzilton Ruziboev",
+
+        result: "win",
+
+        method: "submission",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Kape vs Horiguchi",
     
     odds: "-101",

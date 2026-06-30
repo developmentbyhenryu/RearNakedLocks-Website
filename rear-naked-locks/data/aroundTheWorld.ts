@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
 {
+    event: "UFC Fiziev vs Torres",
+
+    parlayResult: "win",
+
+    units: 1.06,
+
+    legs: [
+      {
+        country: "Russia",
+        fighter: "Shara Magomedov",
+        result: "win",
+      },
+
+      {
+        country: "Kazakhstan",
+        fighter: "Asu Almabayev",
+        result: "win",
+      },
+
+      {
+        country: "Ukraine",
+        fighter: "Daniil Donchenko",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Kape vs Horiguchi",
 
     parlayResult: "win",
