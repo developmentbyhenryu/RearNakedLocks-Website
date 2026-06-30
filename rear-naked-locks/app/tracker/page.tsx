@@ -245,9 +245,11 @@ const eventResults = Object.entries(
   ),
 
   result:
-    data.wins >= data.losses
-      ? "win"
-      : "loss",
+  data.units > 0
+    ? "win"
+    : data.units < 0
+    ? "loss"
+    : "push",
 }));
 
 
