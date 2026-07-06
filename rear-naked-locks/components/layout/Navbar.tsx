@@ -22,12 +22,12 @@ export default function Navbar() {
   <div className="flex items-center gap-10">
     {/* DESKTOP NAV */}
 <div className="hidden items-center gap-8 text-sm font-medium text-gray-300 lg:flex">
-  <Link
+  {/* <Link
     href="/events"
     className="transition hover:text-white"
   >
     Events
-  </Link>
+  </Link> */}
 
   {/* <Link
     href="/fighters"
@@ -85,9 +85,9 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {open && (
 <div className="flex flex-col gap-5 text-lg text-white">
-  <Link href="/events">
+  {/* <Link href="/events">
     Events
-  </Link>
+  </Link> */}
 
   {/* <Link href="/fighters">
     Fighters
