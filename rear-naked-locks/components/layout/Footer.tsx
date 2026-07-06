@@ -37,12 +37,12 @@ export default function Footer() {
                 Home
               </Link>
 
-              <Link
-                href="/events"
-                className="transition hover:text-white"
-              >
-                Events
-              </Link>
+                {/* <Link
+                  href="/events"
+                  className="transition hover:text-white"
+                >
+                  Events
+                </Link> */}
 
               <Link
                 href="/tracker"
