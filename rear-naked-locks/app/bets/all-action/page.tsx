@@ -254,7 +254,7 @@ export default function AllActionPage() {
             {/* RIGHT */}
             <div className="relative overflow-hidden rounded-3xl border border-red-500/20">
               <Image
-                src="/bets/all-action.jpg"
+                src="/bets/all-action.jpeg"
                 alt="All Action Parlay"
                 width={1200}
                 height={1200}

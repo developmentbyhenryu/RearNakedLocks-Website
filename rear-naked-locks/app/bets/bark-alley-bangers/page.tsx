@@ -295,7 +295,7 @@ export default function BarkAlleyPage() {
           <div className="grid lg:grid-cols-2">
             <div className="relative min-h-[400px]">
               <Image
-                src="/fighters/current-dog.jpg"
+                src="/fighters/current-dog.jpeg"
                 alt="Current Pick"
                 fill
                 className="object-cover"

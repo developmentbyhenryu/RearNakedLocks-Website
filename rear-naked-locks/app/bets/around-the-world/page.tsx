@@ -126,7 +126,7 @@ export default function AroundTheWorldPage() {
             {/* RIGHT */}
             <div className="relative overflow-hidden rounded-3xl border border-white/10">
               <Image
-                src="/bets/around-world.jpg"
+                src="/bets/around-world.jpeg"
                 alt="Around The World"
                 width={1200}
                 height={1200}

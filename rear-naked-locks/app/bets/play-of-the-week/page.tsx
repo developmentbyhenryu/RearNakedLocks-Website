@@ -490,7 +490,7 @@ export default function PlayOfTheWeekPage() {
       {/* LEFT IMAGE */}
       <div className="relative min-h-[420px]">
         <Image
-          src="/bets/play-of-week.jpg"
+          src="/bets/play-of-week.jpeg"
           alt="Play Of The Week"
           fill
           className="object-cover"
