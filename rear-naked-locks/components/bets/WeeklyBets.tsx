@@ -4,22 +4,22 @@ import Link from "next/link";
 const bets = [
   {
     title: "Play of the Week",
-    image: "/bets/play-of-week.jpg",
+    image: "/bets/play-of-week.jpeg",
     link: "/bets/play-of-the-week",
   },
   {
     title: "Bark Alley Bangers",
-    image: "/bets/bark-alley.jpg",
+    image: "/bets/bark-alley.jpeg",
     link: "/bets/bark-alley-bangers",
   },
   {
     title: "Around the World",
-    image: "/bets/around-world.jpg",
+    image: "/bets/around-world.jpeg",
     link: "/bets/around-the-world",
   },
   {
     title: "All Action Parlay",
-    image: "/bets/all-action.jpg",
+    image: "/bets/all-action.jpeg",
     link: "/bets/all-action",
   },
 ];

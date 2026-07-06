@@ -8,7 +8,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC Song VS Figueiredo
+          UFC DU Plessis VS Usman
         </h2>
       </div>
 
@@ -20,7 +20,7 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Topuria <br /> vs Gaethje
+              Mcgregor <br /> vs Holloway 2
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
