@@ -317,7 +317,7 @@ export default function BarkAlleyPage() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  +130
+                  +126
                 </div>
 
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
