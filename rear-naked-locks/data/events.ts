@@ -327,13 +327,5 @@ export const events = [
         units: 0,
       },
     },
-
-    seo: {
-      title:
-        "UFC 329 Betting Picks, Predictions & Breakdown | Rear Naked Locks",
-
-      description:
-        "Full UFC 329 betting breakdown including official picks, parlays, underdogs, analytics, and predictions from Rear Naked Locks.",
-    },
   },
 ];

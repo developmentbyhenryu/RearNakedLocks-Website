@@ -34,7 +34,7 @@ export default function FeaturedEvent() {
     </Button>
   </a>
 
-  <a href="/events/ufc-freedom-250">
+  <a href="/events/ufc-329">
     <Button variant="secondary">
       View Picks
     </Button>
