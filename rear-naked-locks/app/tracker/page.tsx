@@ -540,7 +540,7 @@ export default function TrackerPage() {
   <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
     <div className="relative h-[220px]">
       <Image
-        src="/bets/play-of-week.jpg"
+        src="/bets/play-of-week.jpeg"
         alt="Play Of The Week"
         fill
         className="object-cover"
@@ -591,7 +591,7 @@ export default function TrackerPage() {
   <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
     <div className="relative h-[220px]">
       <Image
-        src="/bets/bark-alley.jpg"
+        src="/bets/bark-alley.jpeg"
         alt="Bark Alley"
         fill
         className="object-cover"
@@ -642,7 +642,7 @@ export default function TrackerPage() {
   <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
     <div className="relative h-[220px]">
       <Image
-        src="/bets/around-world.jpg"
+        src="/bets/around-world.jpeg"
         alt="Around The World"
         fill
         className="object-cover"
@@ -693,7 +693,7 @@ export default function TrackerPage() {
   <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
     <div className="relative h-[220px]">
       <Image
-        src="/bets/all-action.jpg"
+        src="/bets/all-action.jpeg"
         alt="All Action"
         fill
         className="object-cover"
