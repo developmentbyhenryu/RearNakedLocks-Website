@@ -310,9 +310,9 @@ export default function BarkAlleyPage() {
               </p>
 
               <h2 className="mt-4 text-5xl font-black uppercase leading-none">
-                Doo Ho
+                Paddy
                 <br />
-                Choi
+                Pimblett
               </h2>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -321,7 +321,7 @@ export default function BarkAlleyPage() {
                 </div>
 
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  Featherweight
+                  Lightweight
                 </div>
               </div>
 
