@@ -299,9 +299,9 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Malcom 
+            Robert  
             <br />
-            Wellmaker
+            Whittaker
           </h3>
         </div>
       </div>
@@ -313,7 +313,7 @@ export default function AllActionPage() {
           </p>
 
           <p className="mt-1 text-xl font-black text-red-400">
-            Power 
+            Speed 
           </p>
         </div>
 
@@ -341,9 +341,9 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Khaos
+            Ryan
             <br />
-            Williams
+            Gandra
           </h3>
         </div>
       </div>
@@ -375,7 +375,7 @@ export default function AllActionPage() {
         </p>
 
         <h3 className="mt-3 text-4xl font-black uppercase">
-          Wellmaker + Williams
+          Whittaker + Gandra
         </h3>
       </div>
 
@@ -386,7 +386,7 @@ export default function AllActionPage() {
           </p>
 
           <p className="text-3xl font-black text-green-400">
-            +133
+            +157
           </p>
         </div>
 

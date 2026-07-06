@@ -275,7 +275,7 @@ export default function BarkAlleyPage() {
             {/* RIGHT */}
             <div className="relative overflow-hidden rounded-3xl border border-red-500/20">
               <Image
-                src="/bets/bark-alley.jpg"
+                src="/bets/bark-alley.jpeg"
                 alt="Bark Alley Bangers"
                 width={1200}
                 height={1200}
@@ -295,7 +295,7 @@ export default function BarkAlleyPage() {
           <div className="grid lg:grid-cols-2">
             <div className="relative min-h-[400px]">
               <Image
-                src="/fighters/current-dog.jpeg"
+                src="/bets/bark-alley.jpeg"
                 alt="Current Pick"
                 fill
                 className="object-cover"

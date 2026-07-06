@@ -190,7 +190,7 @@ export default function AroundTheWorldPage() {
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Tommy Gantt
+                Max Holloway
                 <br />
                 ML
               </h3>
@@ -228,11 +228,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Romania
+                Brazil
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Alice Ardelean
+                Alessandro Costa
                 <br />
                 ML
               </h3>
@@ -268,11 +268,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Lithuania
+                England
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Modestas Bukauskas
+                Luke Riley
                 <br />
                 ML
               </h3>
