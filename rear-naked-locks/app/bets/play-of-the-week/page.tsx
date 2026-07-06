@@ -344,7 +344,7 @@ export default function PlayOfTheWeekPage() {
             <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
               <div className="relative h-[420px] overflow-hidden">
                 <Image
-                  src="/team/henry.jpg"
+                  src="/headshots/placeholder.jpg"
                   alt="Henry"
                   fill
                   className="object-cover"
@@ -414,7 +414,7 @@ export default function PlayOfTheWeekPage() {
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
               <div className="relative h-[420px] overflow-hidden">
                 <Image
-                  src="/team/chato.jpg"
+                  src="/headshots/placeholder.jpg"
                   alt="Chato"
                   fill
                   className="object-cover"
@@ -517,7 +517,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Tommy Gantt
+              Lon'ner Kavanagh
             </h3>
           </div>
 
@@ -528,7 +528,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Modestas Bukauskas
+              Alessandro Costa
             </h3>
           </div>
 
