@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
       {
+    event: "UFC 329 Mcgregor vs Holloway 2",
+
+    henryPick: "Loneer Kavanagh",
+    henryResult: "loss",
+
+    chatoPick: "Alessandro Costa",
+    chatoResult: "win",
+
+    parlayResult: "loss",
+
+    units: -1,
+  },
+  {
     event: "UFC Fiziev vs Torres",
 
     henryPick: "Nurzilton Ruziboev",

@@ -1,5 +1,22 @@
 export const barkAlleyHistory = [
-   {
+  {
+    event: "UFC 329 Mcgregor vs Holloway 2",
+
+    fighter: "Paddy Pimblett",
+
+    weightClass: "Lightweight",
+
+    odds: "+126",
+
+    result: "win",
+
+    methodOfVictory: "submission",
+
+    methodOfLoss: null,
+
+    units: 1.26,
+  },  
+  {
     event: "UFC Fiziev vs Torres",
 
     fighter: "Manuel Torres",

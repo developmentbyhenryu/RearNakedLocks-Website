@@ -1,5 +1,42 @@
+import { truncate } from "fs";
+
 export const allActionHistory = [
 {
+    event: "UFC 329 Mcgregor vs Holloway 2",
+    
+    odds: "+157",
+    
+    parlayResult: "win",
+
+    units: 1.57,
+
+    legs: [
+      {
+        fighter: "Robert Whittaker",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 3,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Ryan Gandra",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Fiziev vs Torres",
     
     odds: "+126",

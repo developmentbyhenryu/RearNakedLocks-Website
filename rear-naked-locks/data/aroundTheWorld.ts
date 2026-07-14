@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
 {
+    event: "UFC 329 Mcgregor vs Holloway 2",
+
+    parlayResult: "win",
+
+    units: 1.51,
+
+    legs: [
+      {
+        country: "USA",
+        fighter: "Max Holloway",
+        result: "win",
+      },
+
+      {
+        country: "England",
+        fighter: "Luke Riley",
+        result: "win",
+      },
+
+      {
+        country: "Brazil",
+        fighter: "Alessandro Costa",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Fiziev vs Torres",
 
     parlayResult: "win",
