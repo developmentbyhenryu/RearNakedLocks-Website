@@ -585,7 +585,7 @@ export default function BarkAlleyPage() {
       <div className="aspect-video w-full">
         <iframe
           className="h-full w-full"
-          src="https://www.youtube.com/embed/5B3-wKlUCCk"
+          src="https://www.youtube.com/embed/LyO1UvSV25w?si=k8wL8yNi_0YeRqck"
           title="Rear Naked Locks Breakdown"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
