@@ -8,7 +8,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC DU Plessis VS Usman
+          UFC Ankalaev vs Guskov
         </h2>
       </div>
 
@@ -20,11 +20,11 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Mcgregor <br /> vs Holloway 2
+              Du Plessis <br /> vs Usman
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
-              Full breakdowns, betting analysis, and predictions for UFC Freedom 250.
+              Full breakdowns, betting analysis, and predictions for UFC OKC Du Plessis vs Usman.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
