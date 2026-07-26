@@ -1,4 +1,30 @@
 export const playOfTheWeekHistory = [
+        {
+    event: "UFC Ankalaev vs Guskov",
+
+    henryPick: "Axel Sola",
+    henryResult: "win",
+
+    chatoPick: "Sam Patterson",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.82,
+  },
+        {
+    event: "UFC Du Plessis vs Usman",
+
+    henryPick: "Fatima Kline",
+    henryResult: "win",
+
+    chatoPick: "Dricus Du Plessis",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.69,
+  },
       {
     event: "UFC 329 Mcgregor vs Holloway 2",
 

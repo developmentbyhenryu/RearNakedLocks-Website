@@ -1,4 +1,38 @@
 export const barkAlleyHistory = [
+    {
+    event: "UFC Ankalaev vs Guskov",
+
+    fighter: "Mike Davis",
+
+    weightClass: "Lightweight",
+
+    odds: "+186",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "decision",
+
+    units: -1,
+  }, 
+    {
+    event: "UFC Du Plessis vs Usman",
+
+    fighter: "Mitch Ramirez",
+
+    weightClass: "Lightweight",
+
+    odds: "+290",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "submission",
+
+    units: -1,
+  }, 
   {
     event: "UFC 329 Mcgregor vs Holloway 2",
 

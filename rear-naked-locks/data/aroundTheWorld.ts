@@ -1,4 +1,58 @@
 export const aroundTheWorldHistory = [
+  {
+    event: "UFC Ankalaev vs Guskov",
+
+    parlayResult: "win",
+
+    units: 0.85,
+
+    legs: [
+      {
+        country: "Russia",
+        fighter: "Rizvan Kuniev",
+        result: "win",
+      },
+
+      {
+        country: "England",
+        fighter: "Sam Patterson",
+        result: "win",
+      },
+
+      {
+        country: "Finland",
+        fighter: "Abdul Hussein",
+        result: "win",
+      },
+    ],
+  },
+  {
+    event: "UFC Du Plessis vs Usman",
+
+    parlayResult: "win",
+
+    units: 1.14,
+
+    legs: [
+      {
+        country: "USA",
+        fighter: "Fatima Kline",
+        result: "win",
+      },
+
+      {
+        country: "England",
+        fighter: "Christian Leroy Duncan",
+        result: "win",
+      },
+
+      {
+        country: "South Africa",
+        fighter: "Dricus Du Plessis",
+        result: "win",
+      },
+    ],
+  },
 {
     event: "UFC 329 Mcgregor vs Holloway 2",
 

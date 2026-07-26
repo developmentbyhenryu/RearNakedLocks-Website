@@ -299,9 +299,9 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Robert  
+            Valter  
             <br />
-            Whittaker
+            Walker
           </h3>
         </div>
       </div>
@@ -318,7 +318,7 @@ export default function AllActionPage() {
         </div>
 
         <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-          Knockout Guaranteed
+          Submission Guaranteed
         </div>
       </div>
     </div>
@@ -341,7 +341,7 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Ryan
+            Ramazan Temirov
             <br />
             Gandra
           </h3>
@@ -375,7 +375,7 @@ export default function AllActionPage() {
         </p>
 
         <h3 className="mt-3 text-4xl font-black uppercase">
-          Whittaker + Gandra
+          Walker + Temirov
         </h3>
       </div>
 
@@ -623,7 +623,7 @@ export default function AllActionPage() {
               <iframe
               
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/LyO1UvSV25w?si=k8wL8yNi_0YeRqck"
+                src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
                 title="Rear Naked Locks Breakdown"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

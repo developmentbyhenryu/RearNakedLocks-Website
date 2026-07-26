@@ -2,6 +2,76 @@ import { truncate } from "fs";
 
 export const allActionHistory = [
 {
+    event: "UFC Ankalaev vs Guskov",
+    
+    odds: "+157",
+    
+    parlayResult: "win",
+
+    units: 1.57,
+
+    legs: [
+      {
+        fighter: "Valter Walker",
+
+        result: "win",
+
+        method: "submission",
+
+        round: 1,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Ramazan Temirov",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
+{
+    event: "UFC Du Plessis vs Usman",
+    
+    odds: "+112",
+    
+    parlayResult: "win",
+
+    units: 1.12,
+
+    legs: [
+      {
+        fighter: "Alden Coria",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+        
+        isFinish: false,
+      },
+
+      {
+        fighter: "Jose Miguel Delgado",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+
+        isFinish: false,
+      },
+    ],
+  },
+{
     event: "UFC 329 Mcgregor vs Holloway 2",
     
     odds: "+157",

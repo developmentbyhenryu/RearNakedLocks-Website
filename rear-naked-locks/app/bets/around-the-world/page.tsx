@@ -157,7 +157,7 @@ export default function AroundTheWorldPage() {
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-              UFC Allen Vs Costa
+              UFC Ankalaev vs Guskov
             </p>
 
             <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
@@ -186,11 +186,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                USA
+                Finland
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Max Holloway
+                Abdul Hussein
                 <br />
                 ML
               </h3>
@@ -228,11 +228,11 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Brazil
+                Russia
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Alessandro Costa
+                Rizvan Kuniev
                 <br />
                 ML
               </h3>
@@ -272,7 +272,7 @@ export default function AroundTheWorldPage() {
               </p>
 
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Luke Riley
+                Sam Patterson
                 <br />
                 ML
               </h3>

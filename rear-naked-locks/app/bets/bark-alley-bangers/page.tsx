@@ -310,14 +310,14 @@ export default function BarkAlleyPage() {
               </p>
 
               <h2 className="mt-4 text-5xl font-black uppercase leading-none">
-                Paddy
+                Mike
                 <br />
-                Pimblett
+                Davis
               </h2>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  +126
+                  +186
                 </div>
 
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
@@ -585,7 +585,7 @@ export default function BarkAlleyPage() {
       <div className="aspect-video w-full">
         <iframe
           className="h-full w-full"
-          src="https://www.youtube.com/embed/LyO1UvSV25w?si=k8wL8yNi_0YeRqck"
+          src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
           title="Rear Naked Locks Breakdown"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

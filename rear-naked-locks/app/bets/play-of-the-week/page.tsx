@@ -297,7 +297,7 @@ export default function PlayOfTheWeekPage() {
           </p>
 
           <h3 className="mt-2 text-2xl font-black uppercase">
-            Grant Dawson
+            Axel Sola
           </h3>
         </div>
 
@@ -307,7 +307,7 @@ export default function PlayOfTheWeekPage() {
           </p>
 
           <h3 className="mt-2 text-2xl font-black uppercase">
-            Jared Gordon
+            Sam Patterson
           </h3>
         </div>
       </div>
@@ -506,7 +506,7 @@ export default function PlayOfTheWeekPage() {
         </p>
 
         <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">
-          UFC Allen vs Costa
+          UFC Ankalaev vs Guskov
         </h2>
 
         <div className="mt-8 space-y-6">
@@ -517,7 +517,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Lon'ner Kavanagh
+              Axel Sola
             </h3>
           </div>
 
@@ -528,7 +528,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Alessandro Costa
+              Sam Patterson
             </h3>
           </div>
 
@@ -618,7 +618,7 @@ export default function PlayOfTheWeekPage() {
     <div className="aspect-video w-full">
       <iframe
         className="h-full w-full"
-        src="https://www.youtube.com/embed/5B3-wKlUCCk?si=hdkedqFSeEkW3R6M"
+        src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
         title="Rear Naked Locks Breakdown"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
