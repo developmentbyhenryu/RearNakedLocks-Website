@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
   {
+    event: "UFC Medic vs Rodriguez",
+
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        country: "New Zealand",
+        fighter: "Navajo Stirling",
+        result: "win",
+      },
+
+      {
+        country: "Slovakia",
+        fighter: "Ludovit Klein",
+        result: "loss",
+      },
+
+      {
+        country: "Switzerland",
+        fighter: "Robert Valentin",
+        result: "win",
+      },
+    ],
+  },
+  {
     event: "UFC Ankalaev vs Guskov",
 
     parlayResult: "win",

@@ -27,7 +27,7 @@ export default function BreakdownVideo() {
           <div className="aspect-video w-full">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
+              src="https://www.youtube.com/embed/0y7YA7TngfY?si=yVaKdxJKRxsb6ysa"
               title="Rear Naked Locks Breakdown"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

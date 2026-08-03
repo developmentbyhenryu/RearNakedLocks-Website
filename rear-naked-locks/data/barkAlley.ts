@@ -1,4 +1,21 @@
 export const barkAlleyHistory = [
+      {
+    event: "UFC Medic vs Rodriguez",
+
+    fighter: "Kyle Prepolec",
+
+    weightClass: "Lightweight",
+
+    odds: "+360",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "knockout",
+
+    units: -1,
+  }, 
     {
     event: "UFC Ankalaev vs Guskov",
 

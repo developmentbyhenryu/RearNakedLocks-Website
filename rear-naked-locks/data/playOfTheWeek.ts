@@ -1,4 +1,17 @@
 export const playOfTheWeekHistory = [
+          {
+    event: "UFC Medic vs Rodriguez",
+
+    henryPick: "Michael Oliveira",
+    henryResult: "win",
+
+    chatoPick: "Navajo Stirling",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.66,
+  },
         {
     event: "UFC Ankalaev vs Guskov",
 

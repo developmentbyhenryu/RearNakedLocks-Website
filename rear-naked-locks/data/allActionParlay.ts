@@ -2,6 +2,41 @@ import { truncate } from "fs";
 
 export const allActionHistory = [
 {
+    event: "UFC Medic vs Rodriguez",
+    
+    odds: "-115",
+    
+    parlayResult: "win",
+
+    units: 0.87,
+
+    legs: [
+      {
+        fighter: "Jovan Leka",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Michael Oliveira",
+
+        result: "win",
+
+        method: "knockout",
+
+        round: 1,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Ankalaev vs Guskov",
     
     odds: "+157",
