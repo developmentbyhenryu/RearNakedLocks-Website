@@ -522,15 +522,7 @@ export default function PlayOfTheWeekPage() {
             <h3 className="mt-2 text-3xl font-black uppercase">
               {currentPlay?.henry.fighter}
             </h3>
-            <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-    Parlay Odds
-  </p>
-
-  <h3 className="mt-2 text-3xl font-black uppercase">
-    {currentPlay?.odds}
-  </h3>
-</div>
+   
           </div>
 
           {/* CHATO PICK */}
@@ -554,6 +546,15 @@ export default function PlayOfTheWeekPage() {
               Michael Chiesa
             </h3>
           </div> */}
+                   <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+    Parlay Odds
+  </p>
+
+  <h3 className="mt-2 text-3xl font-black uppercase">
+    {currentPlay?.odds}
+  </h3>
+</div>
         </div>
 
         {/* BUTTONS */}
