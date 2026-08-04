@@ -1,17 +1,17 @@
 import { getCurrentEvent } from "./events";
 
 export function getPlayOfTheWeek() {
-  return getCurrentEvent()?.officialPicks.playOfTheWeek;
+  return getCurrentEvent()?.segments.playOfTheWeek;
 }
 
 export function getBarkAlley() {
-  return getCurrentEvent()?.officialPicks.barkAlley;
+  return getCurrentEvent()?.segments.barkAlley;
 }
 
 export function getAroundTheWorld() {
-  return getCurrentEvent()?.officialPicks.aroundTheWorld;
+  return getCurrentEvent()?.segments.aroundTheWorld;
 }
 
 export function getAllAction() {
-  return getCurrentEvent()?.officialPicks.allAction;
+  return getCurrentEvent()?.segments.allAction;
 }
