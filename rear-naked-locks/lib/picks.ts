@@ -1,17 +1,45 @@
 import { getCurrentEvent } from "./events";
 
 export function getPlayOfTheWeek() {
-  return getCurrentEvent()?.segments.playOfTheWeek;
+  const event = getCurrentEvent();
+
+  if (!event) return null;
+
+  return {
+    event: event.event,
+    ...event.segments.playOfTheWeek,
+  };
 }
 
 export function getBarkAlley() {
-  return getCurrentEvent()?.segments.barkAlley;
+  const event = getCurrentEvent();
+
+  if (!event) return null;
+
+  return {
+    event: event.event,
+    ...event.segments.barkAlley,
+  };
 }
 
 export function getAroundTheWorld() {
-  return getCurrentEvent()?.segments.aroundTheWorld;
+  const event = getCurrentEvent();
+
+  if (!event) return null;
+
+  return {
+    event: event.event,
+    ...event.segments.aroundTheWorld,
+  };
 }
 
 export function getAllAction() {
-  return getCurrentEvent()?.segments.allAction;
+  const event = getCurrentEvent();
+
+  if (!event) return null;
+
+  return {
+    event: event.event,
+    ...event.segments.allAction,
+  };
 }
