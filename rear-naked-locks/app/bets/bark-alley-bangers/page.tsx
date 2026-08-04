@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getBarkAlley } from "@/lib/picks";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
 import { barkAlleyHistory } from "@/data/barkAlley";
 import {
@@ -164,6 +165,8 @@ const bestWeightClass = Object.entries(
     return bRate - aRate;
   })[0];
 
+const currentBark = getBarkAlley();
+
 export default function BarkAlleyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -311,19 +314,17 @@ export default function BarkAlleyPage() {
               </p>
 
               <h2 className="mt-4 text-5xl font-black uppercase leading-none">
-                Mike
-                <br />
-                Davis
+                {currentBark?.fighter}
               </h2>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  +186
+                  {currentBark?.odds}
                 </div>
 
-                <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
+                {/* <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
                   Lightweight
-                </div>
+                </div> */}
               </div>
 
                   <a
