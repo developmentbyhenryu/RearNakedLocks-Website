@@ -41,7 +41,7 @@ export default async function EventPage({
           </p>
 
           <h1 className="mt-4 text-5xl font-black uppercase md:text-7xl">
-            {event.name}
+            {event.event}
           </h1>
 
           <p className="mt-4 text-xl text-gray-300">
@@ -82,7 +82,7 @@ export default async function EventPage({
         </p>
 
         <h3 className="text-2xl font-black">
-          {event.officialPicks.playOfTheWeek.henryPick}
+          {event.segments.playOfTheWeek.henry.fighter}
         </h3>
       </div>
 
@@ -92,7 +92,7 @@ export default async function EventPage({
         </p>
 
         <h3 className="text-2xl font-black">
-          {event.officialPicks.playOfTheWeek.chatoPick}
+          {event.segments.playOfTheWeek.chato.fighter}
         </h3>
       </div>
 
@@ -102,7 +102,7 @@ export default async function EventPage({
         </p>
 
         <p className="mt-2 text-xl font-black text-green-400">
-          {event.officialPicks.playOfTheWeek.odds}
+          {event.segments.playOfTheWeek.odds}
         </p>
       </div>
     </div>
@@ -115,7 +115,7 @@ export default async function EventPage({
       </p>
 
       <h3 className="mt-6 text-3xl font-black">
-        {event.officialPicks.barkAlley.fighter}
+        {event.segments.barkAlley.fighter}
       </h3>
 
       <p className="mt-3 text-sm text-gray-500">
@@ -128,7 +128,7 @@ export default async function EventPage({
         </p>
 
         <p className="mt-2 text-xl font-black text-orange-400">
-          {event.officialPicks.barkAlley.odds}
+          {event.segments.barkAlley.odds}
         </p>
       </div>
     </div>
@@ -141,7 +141,7 @@ export default async function EventPage({
       </p>
 
       <div className="mt-6 space-y-4">
-        {event.officialPicks.aroundTheWorld.countries.map(
+        {event.segments.aroundTheWorld.countries.map(
           (pick) => (
             <div key={pick.fighter}>
               <p className="text-xs uppercase tracking-widest text-gray-500">
@@ -162,7 +162,7 @@ export default async function EventPage({
         </p>
 
         <p className="mt-2 text-xl font-black text-blue-400">
-          {event.officialPicks.aroundTheWorld.parlayOdds}
+          {event.segments.aroundTheWorld.parlayOdds}
         </p>
       </div>
     </div>
@@ -175,7 +175,7 @@ export default async function EventPage({
       </p>
 
       <div className="mt-6 space-y-4">
-        {event.officialPicks.allAction.legs.map(
+        {event.segments.allAction.picks.map(
           (leg) => (
             <div key={leg.fighter}>
               <h3 className="font-bold">
@@ -196,7 +196,7 @@ export default async function EventPage({
         </p>
 
         <p className="mt-2 text-xl font-black text-red-400">
-          {event.officialPicks.allAction.parlayOdds}
+          {event.segments.allAction.parlayOdds}
         </p>
       </div>
     </div>
