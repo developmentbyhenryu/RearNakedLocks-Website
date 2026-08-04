@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import BreakdownVideo from "@/components/home/BreakdownVideo";
 import { barkAlleyHistory } from "@/data/barkAlley";
 import {
   ResponsiveContainer,
@@ -558,42 +559,7 @@ export default function BarkAlleyPage() {
         </div>
       </section>
       {/* VIDEO BREAKDOWN */}
-<section
-  id="video-breakdown"
-  className="border-t border-white/10"
->
-  <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
-    <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
-      {/* HEADER */}
-      <div className="border-b border-white/10 p-6 md:p-8">
-        <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-          Official Breakdown
-        </p>
-
-        <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
-          Watch The Breakdown
-        </h2>
-
-        <p className="mt-4 max-w-2xl text-gray-300">
-          Full Bark Alley breakdown including betting logic,
-          matchup analysis, underdog value, and why this
-          spot was targeted.
-        </p>
-      </div>
-
-      {/* VIDEO */}
-      <div className="aspect-video w-full">
-        <iframe
-          className="h-full w-full"
-          src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
-          title="Rear Naked Locks Breakdown"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    </div>
-  </div>
-</section>
+<BreakdownVideo />
    {/* CTA */}
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-10">

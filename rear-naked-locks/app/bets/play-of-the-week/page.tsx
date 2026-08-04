@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { playOfTheWeekHistory } from "@/data/playOfTheWeek";
-
+import BreakdownVideo from "@/components/home/BreakdownVideo";
 import {
   ResponsiveContainer,
   BarChart,
@@ -593,39 +593,7 @@ export default function PlayOfTheWeekPage() {
 </section>
 
 {/* VIDEO BREAKDOWN */}
-<section
-  id="video-breakdown"
-  className="mx-auto max-w-7xl px-6 pb-16 md:px-10"
->
-  <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117]">
-    <div className="border-b border-white/10 p-6 md:p-8">
-      <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-        Official Breakdown
-      </p>
-
-      <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
-        Watch The Breakdown
-      </h2>
-
-      <p className="mt-4 max-w-2xl text-gray-300">
-        Full betting breakdown for this week’s Play of the Week
-        parlay including matchup analysis, betting logic,
-        confidence level, and final prediction.
-      </p>
-    </div>
-
-    {/* VIDEO */}
-    <div className="aspect-video w-full">
-      <iframe
-        className="h-full w-full"
-        src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
-        title="Rear Naked Locks Breakdown"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
-  </div>
-</section>
+<BreakdownVideo />
 
       {/* CHANNEL RECORD */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">

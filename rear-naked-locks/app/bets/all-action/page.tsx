@@ -1,5 +1,5 @@
 "use client";
-
+import BreakdownVideo from "@/components/home/BreakdownVideo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -606,30 +606,9 @@ export default function AllActionPage() {
             </div>
           </div>
 
-          {/* VIDEO */}
-          <div id="video-breakdown" 
-          className="mt-12 overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
-            <div className="border-b border-white/10 p-6">
-              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-                Official Breakdown
-              </p>
-
-              <h3 className="mt-3 text-3xl font-black uppercase text-white">
-                Watch The Breakdown
-              </h3>
-            </div>
-
-            <div className="aspect-video w-full">
-              <iframe
-              
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/JEPkW0-RkyE?si=kBT0Lh7_0Ckcp8jf"
-                title="Rear Naked Locks Breakdown"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
+         <div className="mt-12">
+  <BreakdownVideo />
+</div>
         </div>
       </section>
          {/* CTA */}
