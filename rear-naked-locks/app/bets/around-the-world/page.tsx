@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getAroundTheWorld } from "@/lib/picks";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
 import CountryTracker from "@/components/stats/CountryTracker";
 import { aroundTheWorldHistory } from "@/data/aroundTheWorld";
@@ -24,6 +25,7 @@ const roi = (
   (totalUnits / aroundTheWorldHistory.length) *
   100
 ).toFixed(0);
+const currentWorld = getAroundTheWorld();
 
 export default function AroundTheWorldPage() {
   return (
@@ -158,7 +160,7 @@ export default function AroundTheWorldPage() {
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-              UFC Ankalaev vs Guskov
+              {currentWorld?.event}
             </p>
 
             <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
@@ -186,14 +188,8 @@ export default function AroundTheWorldPage() {
             </div>
 
             <div className="p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Finland
-              </p>
-
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Abdul Hussein
-                <br />
-                ML
+                {currentWorld?.countries[0].fighter}
               </h3>
 
               <div className="mt-6 flex items-center justify-between">
@@ -228,14 +224,9 @@ export default function AroundTheWorldPage() {
             </div>
 
             <div className="p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                Russia
-              </p>
-
+             
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Rizvan Kuniev
-                <br />
-                ML
+                {currentWorld?.countries[1].fighter}
               </h3>
 
               <div className="mt-6 flex items-center justify-between">
@@ -268,14 +259,8 @@ export default function AroundTheWorldPage() {
             </div>
 
             <div className="p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-500">
-                England
-              </p>
-
               <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                Sam Patterson
-                <br />
-                ML
+                {currentWorld?.countries[2].fighter}
               </h3>
 
               <div className="mt-6 flex items-center justify-between">
@@ -296,7 +281,57 @@ export default function AroundTheWorldPage() {
         </div>
  
       </section>
+{/* PARLAY SUMMARY */}
+<div className="mt-8 overflow-hidden rounded-3xl border border-red-500/20 bg-gradient-to-r from-red-950/40 to-black">
+  <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
+    <div>
+      <p className="text-xs uppercase tracking-[0.35em] text-red-400">
+        Official Around The World Ticket
+      </p>
 
+      <h3 className="mt-3 text-4xl font-black uppercase">
+        {currentWorld?.countries
+          .map((pick) => pick.fighter)
+          .join(" + ")}
+      </h3>
+    </div>
+
+    <div className="flex items-center gap-6">
+      <div>
+        <p className="text-sm text-gray-400">
+          Odds
+        </p>
+
+        <p className="text-3xl font-black text-green-400">
+          {currentWorld?.parlayOdds}
+        </p>
+      </div>
+
+      <a
+        href="#video-breakdown"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          rounded-full
+          bg-red-600
+          px-6
+          py-4
+          text-sm
+          font-black
+          uppercase
+          tracking-wide
+          text-white
+          transition-all
+          duration-300
+          hover:bg-red-500
+        "
+      >
+        Watch Breakdown
+      </a>
+    </div>
+  </div>
+</div>
       <CountryTracker />
     {/* VIDEO BREAKDOWN */}
 <BreakdownVideo />
