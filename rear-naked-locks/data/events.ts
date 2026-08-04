@@ -10,7 +10,7 @@ export const events = [
 
     slug: "ufc-uae-7-25-26",
 
-    name: "UFC Ankalaev VS Guskov",
+    event: "UFC Ankalaev VS Guskov",
 
     shortName: "UFC UAE",
 
@@ -235,14 +235,17 @@ export const events = [
 
     segments: {
       playOfTheWeek: {
-        henryPick:
-          "Fatima Kline",
-
-        chatoPick:
-          "Dricus Du Plessis",
-
+        henry: {
+          fighter:"Fatima Kline",
+          result: null,
+        },
+          
+        chato: {
+          fighter:"Dricus Du Plessis",
+          result: null,
+        },
+          
         odds: "-140",
-
         result: null,
         // win | loss | push
 
