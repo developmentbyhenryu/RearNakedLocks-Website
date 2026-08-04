@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getPlayOfTheWeek } from "@/lib/picks";
 import { playOfTheWeekHistory } from "@/data/playOfTheWeek";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
 import {
@@ -217,6 +218,8 @@ const worstConsensusFighters = [...consensusFighters]
 const recentPicks =
   playOfTheWeekHistory.slice(0, 5);
 
+const currentPlay = getPlayOfTheWeek();
+
 export default function PlayOfTheWeekPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -287,7 +290,7 @@ export default function PlayOfTheWeekPage() {
       </p>
 
       <h2 className="mt-3 text-3xl font-black uppercase">
-        UFC 328
+        {currentPlay?.event}
       </h2>
 
       <div className="mt-6 space-y-4">
@@ -297,7 +300,7 @@ export default function PlayOfTheWeekPage() {
           </p>
 
           <h3 className="mt-2 text-2xl font-black uppercase">
-            Axel Sola
+            {currentPlay?.henry.fighter}
           </h3>
         </div>
 
@@ -307,7 +310,7 @@ export default function PlayOfTheWeekPage() {
           </p>
 
           <h3 className="mt-2 text-2xl font-black uppercase">
-            Sam Patterson
+            {currentPlay?.chato.fighter}
           </h3>
         </div>
       </div>
@@ -506,7 +509,7 @@ export default function PlayOfTheWeekPage() {
         </p>
 
         <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">
-          UFC Ankalaev vs Guskov
+          {currentPlay?.event}
         </h2>
 
         <div className="mt-8 space-y-6">
@@ -517,8 +520,17 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Axel Sola
+              {currentPlay?.henry.fighter}
             </h3>
+            <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+    Parlay Odds
+  </p>
+
+  <h3 className="mt-2 text-3xl font-black uppercase">
+    {currentPlay?.odds}
+  </h3>
+</div>
           </div>
 
           {/* CHATO PICK */}
@@ -528,7 +540,7 @@ export default function PlayOfTheWeekPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-black uppercase">
-              Sam Patterson
+              {currentPlay?.chato.fighter}
             </h3>
           </div>
 
