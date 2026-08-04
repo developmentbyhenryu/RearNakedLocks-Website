@@ -3,6 +3,7 @@ import BreakdownVideo from "@/components/home/BreakdownVideo";
 import Image from "next/image";
 import Link from "next/link";
 
+import { getAllAction } from "@/lib/picks";
 import { allActionHistory } from "@/data/allActionParlay";
 
 import {
@@ -149,6 +150,8 @@ const mostViolentFighter = Object.entries(
 const recentEvents =
   allActionHistory.slice(0, 5);
 
+const currentParlay = getAllAction();
+
 export default function AllActionPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -272,7 +275,7 @@ export default function AllActionPage() {
 <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
   <div className="mb-10">
     <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-      UFC 328
+      {currentParlay?.event}
     </p>
 
     <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
@@ -299,9 +302,7 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Valter  
-            <br />
-            Walker
+            {currentParlay?.picks[0].fighter}
           </h3>
         </div>
       </div>
@@ -341,9 +342,7 @@ export default function AllActionPage() {
           </p>
 
           <h3 className="mt-3 text-4xl font-black uppercase leading-none">
-            Ramazan Temirov
-            <br />
-            Gandra
+            {currentParlay?.picks[1].fighter}
           </h3>
         </div>
       </div>
@@ -375,7 +374,9 @@ export default function AllActionPage() {
         </p>
 
         <h3 className="mt-3 text-4xl font-black uppercase">
-          Walker + Temirov
+          {currentParlay?.picks
+  .map((pick) => pick.fighter)
+  .join(" + ")}
         </h3>
       </div>
 
@@ -386,7 +387,7 @@ export default function AllActionPage() {
           </p>
 
           <p className="text-3xl font-black text-green-400">
-            +157
+            {currentParlay?.parlayOdds}
           </p>
         </div>
 
