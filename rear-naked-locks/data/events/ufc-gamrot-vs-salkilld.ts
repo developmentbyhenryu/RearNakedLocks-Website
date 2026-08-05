@@ -131,8 +131,8 @@ const ufcGamrotVsSalkilld: Event = {
           result: null,
         },
         {
-          fighter: "Louie Sutherland",
-          odds: "-162",
+          fighter: "Jose Montanha",
+          odds: "+135",
           confidence: 4,
           result: null,
         },
@@ -208,9 +208,9 @@ const ufcGamrotVsSalkilld: Event = {
           result: null,
         },
         {
-          fighter: "Richie Miranda",
-          odds: "+210",
-          confidence: 5,
+          fighter: "Manoel Sousa",
+          odds: "-280",
+          confidence: 7,
           result: null,
         },
         {
