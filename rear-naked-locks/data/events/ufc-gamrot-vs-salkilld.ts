@@ -28,9 +28,9 @@ const ufcGamrotVsSalkilld: Event = {
 
     thumbnail: "/events/gamrot-salkilld-thumbnail.jpg",
     video: {
-      youtubeId: "",
+      youtubeId: "WGxHqXHirSw",
 
-      title: "",
+      title: "Everyone's Betting Salkilld... Here's Why We're Fading Him",
     },
   },
   /* ==========================================

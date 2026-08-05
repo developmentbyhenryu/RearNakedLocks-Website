@@ -290,10 +290,10 @@ export default function AllActionPage() {
     <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
       <div className="relative h-[320px] overflow-hidden">
         <Image
-          src="/fighters/ochoa.jpg"
-          alt="Jose Ochoa"
+          src="/fighters/juliana-miller-125.png"
+          alt="Juliana Miller"
           fill
-          className="object-cover"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -316,7 +316,7 @@ export default function AllActionPage() {
           </p>
 
           <p className="mt-1 text-xl font-black text-red-400">
-            Speed 
+            Grapple Heavy 
           </p>
         </div>
 
@@ -330,10 +330,10 @@ export default function AllActionPage() {
     <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
       <div className="relative h-[320px] overflow-hidden">
         <Image
-          src="/fighters/brady.jpg"
-          alt="Sean Brady"
+          src="/fighters/diego-ferreira-155.png"
+          alt="Diego Ferreira"
           fill
-          className="object-cover"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -356,7 +356,7 @@ export default function AllActionPage() {
           </p>
 
           <p className="mt-1 text-xl font-black text-red-400">
-            Relentless Pace
+            Relentless Pressure
           </p>
         </div>
 

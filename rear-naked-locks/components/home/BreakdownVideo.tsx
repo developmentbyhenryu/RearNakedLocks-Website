@@ -1,9 +1,9 @@
 const latestBreakdown = {
-  event: "UFC Belgrade",
-  fight: "Medic vs Rodriguez",
-  title: "Full Betting Breakdown",
-  youtubeId: "0y7YA7TngfY",
-  date: "August 1, 2026",
+  event: "UFC Vegas",
+  fight: "Gamrot vs Salkilld",
+  title: "Everyone's Betting Salkilld... Here's Why We're Fading Him",
+  youtubeId: "WGxHqXHirSw",
+  date: "August 6, 2026",
 };
 
 export default function BreakdownVideo() {

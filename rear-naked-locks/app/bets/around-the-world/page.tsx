@@ -180,10 +180,10 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/topuria.jpg"
-                alt="Fighter1"
+                src="/fighters/alexia-thainara125.png"
+                alt="Alexia Thainara"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -220,10 +220,10 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/chimaev.jpg"
-                alt="Fighter2"
+                src="/fighters/ty-miller-170.png"
+                alt="Ty Miller"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -259,10 +259,10 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/oliveira.jpg"
-                alt="Oliveira"
+                src="/fighters/diyar-nurgozhay-205.png"
+                alt="Diyar Nurgozhay"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
