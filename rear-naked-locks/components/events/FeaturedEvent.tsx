@@ -8,7 +8,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC Gamrot vs Salkilld
+          UFC 330 Makhachev vs Machado Garry
         </h2>
       </div>
 
@@ -20,11 +20,11 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Medic <br /> vs Rodriguez
+              Gamrot <br /> vs Salkilld
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
-              Full breakdowns, betting analysis, and predictions for UFC OKC Du Plessis vs Usman.
+              Full breakdowns, betting analysis, and predictions for UFC Gamrot vs Salkilld.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
