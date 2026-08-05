@@ -17,17 +17,22 @@ export default async function EventPage({
     notFound();
   }
 
-  const consensusPicks =
-    event.individualPicks
-      ? event.individualPicks.henry.filter(
-          (henryPick) =>
-            event.individualPicks.chato.some(
-              (chatoPick) =>
-                chatoPick.fighter ===
-                henryPick.fighter
-            )
-        )
-      : [];
+  const { fights, segments } = event;
+
+  const {
+    picks,
+    playOfTheWeek,
+    barkAlley,
+    aroundTheWorld,
+    allAction,
+  } = segments;
+
+  const consensusPicks = picks.henry.filter((henryPick) =>
+    picks.chato.some(
+      (chatoPick) =>
+        chatoPick.fighter === henryPick.fighter
+    )
+  );
 
   return (
     <main className="bg-black text-white">
@@ -45,8 +50,8 @@ export default async function EventPage({
           </h1>
 
           <p className="mt-4 text-xl text-gray-300">
-            {event.mainEvent.fighterA.name} vs{" "}
-            {event.mainEvent.fighterB.name}
+            {fights.mainEvent.fighterA.name} vs{" "}
+            {fights.mainEvent.fighterB.name}
           </p>
 
           <p className="mt-3 text-gray-500">
@@ -54,155 +59,150 @@ export default async function EventPage({
           </p>
         </section>
 
-{event.individualPicks && (
-  <EventPicks
-    henry={event.individualPicks.henry}
-    chato={event.individualPicks.chato}
-  />
-)}
-  {/* OFFICIAL SEGMENTS */}
+        <EventPicks
+          henry={picks.henry}
+          chato={picks.chato}
+        />
 
-<section className="mt-20">
-  <h2 className="mb-8 text-4xl font-black uppercase">
-    Official Betting Segments
-  </h2>
+        {/* OFFICIAL SEGMENTS */}
 
-  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <section className="mt-20">
+          <h2 className="mb-8 text-4xl font-black uppercase">
+            Official Betting Segments
+          </h2>
 
-    {/* PLAY OF THE WEEK */}
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
-    <div className="flex h-full flex-col rounded-3xl border border-green-500/30 bg-[#0d1117] p-6">
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-green-400">
-        🔥 Play of the Week
-      </p>
+            {/* PLAY OF THE WEEK */}
 
-      <div className="mt-6">
-        <p className="text-sm text-gray-400">
-          Henry
-        </p>
-
-        <h3 className="text-2xl font-black">
-          {event.segments.playOfTheWeek.henry.fighter}
-        </h3>
-      </div>
-
-      <div className="mt-5">
-        <p className="text-sm text-gray-400">
-          Chato
-        </p>
-
-        <h3 className="text-2xl font-black">
-          {event.segments.playOfTheWeek.chato.fighter}
-        </h3>
-      </div>
-
-      <div className="mt-auto border-t border-white/10 pt-4">
-        <p className="text-xs uppercase tracking-widest text-gray-500">
-          Odds
-        </p>
-
-        <p className="mt-2 text-xl font-black text-green-400">
-          {event.segments.playOfTheWeek.odds}
-        </p>
-      </div>
-    </div>
-
-    {/* BARK ALLEY */}
-
-    <div className="flex h-full flex-col rounded-3xl border border-orange-500/30 bg-[#0d1117] p-6">
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-orange-400">
-        🐶 Bark Alley Banger
-      </p>
-
-      <h3 className="mt-6 text-3xl font-black">
-        {event.segments.barkAlley.fighter}
-      </h3>
-
-      <p className="mt-3 text-sm text-gray-500">
-        Official Underdog Play
-      </p>
-
-      <div className="mt-auto border-t border-white/10 pt-4">
-        <p className="text-xs uppercase tracking-widest text-gray-500">
-          Odds
-        </p>
-
-        <p className="mt-2 text-xl font-black text-orange-400">
-          {event.segments.barkAlley.odds}
-        </p>
-      </div>
-    </div>
-
-    {/* AROUND THE WORLD */}
-
-    <div className="flex h-full flex-col rounded-3xl border border-blue-500/30 bg-[#0d1117] p-6">
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-blue-400">
-        🌎 Around The World
-      </p>
-
-      <div className="mt-6 space-y-4">
-        {event.segments.aroundTheWorld.countries.map(
-          (pick) => (
-            <div key={pick.fighter}>
-              <p className="text-xs uppercase tracking-widest text-gray-500">
-                {pick.country}
+            <div className="flex h-full flex-col rounded-3xl border border-green-500/30 bg-[#0d1117] p-6">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-green-400">
+                🔥 Play Of The Week
               </p>
 
-              <h3 className="font-bold">
-                {pick.fighter}
-              </h3>
-            </div>
-          )
-        )}
-      </div>
-
-      <div className="mt-auto border-t border-white/10 pt-4">
-        <p className="text-xs uppercase tracking-widest text-gray-500">
-          Parlay Odds
-        </p>
-
-        <p className="mt-2 text-xl font-black text-blue-400">
-          {event.segments.aroundTheWorld.parlayOdds}
-        </p>
-      </div>
-    </div>
-
-    {/* ALL ACTION */}
-
-    <div className="flex h-full flex-col rounded-3xl border border-red-500/30 bg-[#0d1117] p-6">
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-red-400">
-        💥 All Action Parlay
-      </p>
-
-      <div className="mt-6 space-y-4">
-        {event.segments.allAction.picks.map(
-          (leg) => (
-            <div key={leg.fighter}>
-              <h3 className="font-bold">
-                {leg.fighter}
-              </h3>
-
-              <p className="text-sm text-gray-500">
-                {"method" in leg ? leg.method : ""}
+              <div className="mt-6">
+                <p className="text-sm text-gray-400">
+                  Henry
                 </p>
+
+                <h3 className="text-2xl font-black">
+                  {playOfTheWeek.henry.fighter}
+                </h3>
+              </div>
+
+              <div className="mt-5">
+                <p className="text-sm text-gray-400">
+                  Chato
+                </p>
+
+                <h3 className="text-2xl font-black">
+                  {playOfTheWeek.chato.fighter}
+                </h3>
+              </div>
+
+              <div className="mt-auto border-t border-white/10 pt-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">
+                  Parlay Odds
+                </p>
+
+                <p className="mt-2 text-xl font-black text-green-400">
+                  {playOfTheWeek.parlayOdds}
+                </p>
+              </div>
             </div>
-          )
-        )}
-      </div>
 
-      <div className="mt-auto border-t border-white/10 pt-4">
-        <p className="text-xs uppercase tracking-widest text-gray-500">
-          Parlay Odds
-        </p>
+            {/* BARK ALLEY */}
 
-        <p className="mt-2 text-xl font-black text-red-400">
-          {event.segments.allAction.parlayOdds}
-        </p>
-      </div>
-    </div>
+            <div className="flex h-full flex-col rounded-3xl border border-orange-500/30 bg-[#0d1117] p-6">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-orange-400">
+                🐶 Bark Alley
+              </p>
 
-  </div>
-</section>
+              <h3 className="mt-6 text-3xl font-black">
+                {barkAlley.pick.fighter}
+              </h3>
+
+              <p className="mt-3 text-sm text-gray-500">
+                Official Underdog Play
+              </p>
+
+              <div className="mt-auto border-t border-white/10 pt-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">
+                  Odds
+                </p>
+
+                <p className="mt-2 text-xl font-black text-orange-400">
+                  {barkAlley.odds}
+                </p>
+              </div>
+            </div>
+
+            {/* AROUND THE WORLD */}
+
+            <div className="flex h-full flex-col rounded-3xl border border-blue-500/30 bg-[#0d1117] p-6">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-blue-400">
+                🌎 Around The World
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {aroundTheWorld.picks.map((pick) => (
+                  <div key={pick.fighter}>
+                    <p className="text-xs uppercase tracking-widest text-gray-500">
+                      {pick.country}
+                    </p>
+
+                    <h3 className="font-bold">
+                      {pick.fighter}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto border-t border-white/10 pt-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">
+                  Parlay Odds
+                </p>
+
+                <p className="mt-2 text-xl font-black text-blue-400">
+                  {aroundTheWorld.parlayOdds}
+                </p>
+              </div>
+            </div>
+
+            {/* ALL ACTION */}
+
+            <div className="flex h-full flex-col rounded-3xl border border-red-500/30 bg-[#0d1117] p-6">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-red-400">
+                💥 All Action Parlay
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {allAction.picks.map((leg) => (
+                  <div key={leg.fighter}>
+                    <h3 className="font-bold">
+                      {leg.fighter}
+                    </h3>
+
+                    <p className="text-sm text-gray-500">
+                      {leg.method}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto border-t border-white/10 pt-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">
+                  Parlay Odds
+                </p>
+
+                <p className="mt-2 text-xl font-black text-red-400">
+                  {allAction.parlayOdds}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
       </div>
     </main>
   );
