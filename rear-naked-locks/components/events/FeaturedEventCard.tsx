@@ -9,8 +9,8 @@ export default function FeaturedEventCard({
       <div className="group overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117] transition duration-300 hover:scale-[1.01] hover:border-red-500/40">
         <div className="relative h-[420px] overflow-hidden">
           <Image
-            src={event.banner}
-            alt={event.name}
+            src={event.media.banner}
+            alt={event.event}
             fill
             className="object-cover transition duration-700 group-hover:scale-105"
           />
@@ -23,12 +23,12 @@ export default function FeaturedEventCard({
             </p>
 
             <h2 className="mt-4 text-5xl font-black uppercase leading-none text-white md:text-7xl">
-              {event.name}
+              {event.event}
             </h2>
 
             <p className="mt-4 text-lg text-gray-300">
-                {event.mainEvent.fighterA.name} vs{" "}
-                {event.mainEvent.fighterB.name}
+              {event.fights.mainEvent.fighterA.name} vs{" "}
+              {event.fights.mainEvent.fighterB.name}
             </p>
 
             <p className="mt-2 text-sm uppercase tracking-[0.25em] text-gray-400">

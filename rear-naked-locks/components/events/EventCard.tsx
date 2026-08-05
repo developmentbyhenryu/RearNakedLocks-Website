@@ -11,8 +11,8 @@ export default function EventCard({
       <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
         <div className="relative h-[280px] overflow-hidden">
           <Image
-            src={event.poster}
-            alt={event.name}
+            src={event.media.poster}
+            alt={event.event}
             fill
             className="object-cover transition duration-700 group-hover:scale-105"
           />
@@ -35,8 +35,8 @@ export default function EventCard({
             </h3>
 
             <p className="mt-3 text-gray-300">
-              {event.mainEvent.fighterA.name} vs{" "}
-              {event.mainEvent.fighterB.name}
+              {event.fights.mainEvent.fighterA.name} vs{" "}
+              {event.fights.mainEvent.fighterB.name}
             </p>
 
             <p className="mt-2 text-sm text-gray-500">
