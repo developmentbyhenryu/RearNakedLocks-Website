@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getPlayOfTheWeek } from "@/lib/picks";
+import { getPlayOfTheWeek } from "@/lib/segments";
+import { getCurrentEvent } from "@/lib/events";
 import { playOfTheWeekHistory } from "@/data/playOfTheWeek";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
 import {
@@ -16,36 +17,27 @@ import {
 /* CHANNEL RECORD */
 
 const wins = playOfTheWeekHistory.filter(
-  (pick) => pick.parlayResult === "win"
+  (pick) => pick.parlayResult === "win",
 ).length;
 
 const losses = playOfTheWeekHistory.filter(
-  (pick) => pick.parlayResult === "loss"
+  (pick) => pick.parlayResult === "loss",
 ).length;
 
 const totalUnits = playOfTheWeekHistory.reduce(
   (acc, pick) => acc + pick.units,
-  0
+  0,
 );
 
-const accuracy = (
-  (wins / playOfTheWeekHistory.length) *
-  100
-).toFixed(0);
+const accuracy = ((wins / playOfTheWeekHistory.length) * 100).toFixed(0);
 
 const totalRisked = playOfTheWeekHistory.length;
 
-const roi = (
-  (totalUnits / totalRisked) *
-  100
-).toFixed(0);
+const roi = ((totalUnits / totalRisked) * 100).toFixed(0);
 
 /* HENRY TRACKER */
 
-const henryTracker: Record<
-  string,
-  { wins: number; losses: number }
-> = {};
+const henryTracker: Record<string, { wins: number; losses: number }> = {};
 
 playOfTheWeekHistory.forEach((pick) => {
   const fighter = pick.henryPick;
@@ -64,19 +56,14 @@ playOfTheWeekHistory.forEach((pick) => {
   }
 });
 
-const henryFighters = Object.entries(
-  henryTracker
-).map(([fighter, record]) => ({
+const henryFighters = Object.entries(henryTracker).map(([fighter, record]) => ({
   fighter,
   ...record,
 }));
 
 /* CHATO TRACKER */
 
-const chatoTracker: Record<
-  string,
-  { wins: number; losses: number }
-> = {};
+const chatoTracker: Record<string, { wins: number; losses: number }> = {};
 
 playOfTheWeekHistory.forEach((pick) => {
   const fighter = pick.chatoPick;
@@ -95,53 +82,46 @@ playOfTheWeekHistory.forEach((pick) => {
   }
 });
 
-const chatoFighters = Object.entries(
-  chatoTracker
-).map(([fighter, record]) => ({
+const chatoFighters = Object.entries(chatoTracker).map(([fighter, record]) => ({
   fighter,
   ...record,
 }));
 
-/* CONSENSUS TRACKER */ 
-const consensusTracker: Record< 
-string, 
-{ wins: number; losses: number } 
-> = {}; 
-playOfTheWeekHistory.forEach((pick) => { 
-    if (!pick.consensusPick) return;
+/* CONSENSUS TRACKER */
+const consensusTracker: Record<string, { wins: number; losses: number }> = {};
+playOfTheWeekHistory.forEach((pick) => {
+  if (!pick.consensusPick) return;
 
-    const fighter = pick.consensusPick; 
-    
-    if (!consensusTracker[fighter]) { 
-        consensusTracker[fighter] = { 
-            wins: 0, 
-            losses: 0,
-         }; 
-        } 
-        if (pick.consensusResult === "win") { 
-            consensusTracker[fighter].wins += 1;
-         } else { 
-            consensusTracker[fighter].losses += 1;
-         }
-         }); 
-         
-         const consensusFighters = Object.entries( 
-            consensusTracker 
-        ).map(([fighter, record]) => ({ 
-            fighter,
-             ...record,
-             }));
+  const fighter = pick.consensusPick;
+
+  if (!consensusTracker[fighter]) {
+    consensusTracker[fighter] = {
+      wins: 0,
+      losses: 0,
+    };
+  }
+  if (pick.consensusResult === "win") {
+    consensusTracker[fighter].wins += 1;
+  } else {
+    consensusTracker[fighter].losses += 1;
+  }
+});
+
+const consensusFighters = Object.entries(consensusTracker).map(
+  ([fighter, record]) => ({
+    fighter,
+    ...record,
+  }),
+);
 
 /* BEST & WORST PERFORMERS */
 
 const bestHenryFighters = [...henryFighters]
   .filter((fighter) => fighter.wins > fighter.losses)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return bRate - aRate;
   })
@@ -150,11 +130,9 @@ const bestHenryFighters = [...henryFighters]
 const worstHenryFighters = [...henryFighters]
   .filter((fighter) => fighter.losses > fighter.wins)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return aRate - bRate;
   })
@@ -163,11 +141,9 @@ const worstHenryFighters = [...henryFighters]
 const bestChatoFighters = [...chatoFighters]
   .filter((fighter) => fighter.wins > fighter.losses)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return bRate - aRate;
   })
@@ -176,11 +152,9 @@ const bestChatoFighters = [...chatoFighters]
 const worstChatoFighters = [...chatoFighters]
   .filter((fighter) => fighter.losses > fighter.wins)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return aRate - bRate;
   })
@@ -189,11 +163,9 @@ const worstChatoFighters = [...chatoFighters]
 const bestConsensusFighters = [...consensusFighters]
   .filter((fighter) => fighter.wins > fighter.losses)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return bRate - aRate;
   })
@@ -202,22 +174,19 @@ const bestConsensusFighters = [...consensusFighters]
 const worstConsensusFighters = [...consensusFighters]
   .filter((fighter) => fighter.losses > fighter.wins)
   .sort((a, b) => {
-    const aRate =
-      a.wins / (a.wins + a.losses);
+    const aRate = a.wins / (a.wins + a.losses);
 
-    const bRate =
-      b.wins / (b.wins + b.losses);
+    const bRate = b.wins / (b.wins + b.losses);
 
     return aRate - bRate;
   })
   .slice(0, 5);
 
-
 /* RECENT PICKS */
 
-const recentPicks =
-  playOfTheWeekHistory.slice(0, 5);
+const recentPicks = playOfTheWeekHistory.slice(0, 5);
 
+const currentEvent = getCurrentEvent();
 const currentPlay = getPlayOfTheWeek();
 
 export default function PlayOfTheWeekPage() {
@@ -264,60 +233,60 @@ export default function PlayOfTheWeekPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">
-              Henry and Chato each select one fighter every week.
-              Together the picks become the official Rear Naked Locks
-              Play of the Week parlay.
+              Henry and Chato each select one fighter every week. Together the
+              picks become the official Rear Naked Locks Play of the Week
+              parlay.
             </p>
 
             {/* MOBILE QUICK ACCESS */}
-<div className="mt-10 space-y-6 lg:hidden">
-  {/* CURRENT PLAY */}
-  <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
-    <div className="relative h-[220px]">
-      <Image
-        src="/bets/play-of-week.jpg"
-        alt="Play Of The Week"
-        fill
-        className="object-cover"
-      />
+            <div className="mt-10 space-y-6 lg:hidden">
+              {/* CURRENT PLAY */}
+              <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
+                <div className="relative h-[220px]">
+                  <Image
+                    src="/bets/play-of-week.jpg"
+                    alt="Play Of The Week"
+                    fill
+                    className="object-cover"
+                  />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-    </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                </div>
 
-    <div className="p-6">
-      <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-        Current Official Parlay
-      </p>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+                    Current Official Parlay
+                  </p>
 
-      <h2 className="mt-3 text-3xl font-black uppercase">
-        {currentPlay?.event}
-      </h2>
+                  <h2 className="mt-3 text-3xl font-black uppercase">
+                    {currentEvent?.event}
+                  </h2>
 
-      <div className="mt-6 space-y-4">
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-            Henry's Pick
-          </p>
+                  <div className="mt-6 space-y-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+                        Henry's Pick
+                      </p>
 
-          <h3 className="mt-2 text-2xl font-black uppercase">
-            {currentPlay?.henry.fighter}
-          </h3>
-        </div>
+                      <h3 className="mt-2 text-2xl font-black uppercase">
+                        {currentPlay?.henry.fighter}
+                      </h3>
+                    </div>
 
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-            Chato's Pick
-          </p>
+                    <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+                        Chato's Pick
+                      </p>
 
-          <h3 className="mt-2 text-2xl font-black uppercase">
-            {currentPlay?.chato.fighter}
-          </h3>
-        </div>
-      </div>
+                      <h3 className="mt-2 text-2xl font-black uppercase">
+                        {currentPlay?.chato.fighter}
+                      </h3>
+                    </div>
+                  </div>
 
-      <a
-        href="#video-breakdown"
-        className="
+                  <a
+                    href="#video-breakdown"
+                    className="
           mt-6
           inline-flex
           w-full
@@ -333,12 +302,12 @@ export default function PlayOfTheWeekPage() {
           tracking-wide
           text-white
         "
-      >
-        Watch Breakdown
-      </a>
-    </div>
-  </div>
-</div>
+                  >
+                    Watch Breakdown
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* HEAD TO HEAD */}
@@ -375,7 +344,7 @@ export default function PlayOfTheWeekPage() {
                   <h3 className="mt-2 text-3xl font-black">
                     {henryFighters.reduce(
                       (acc, fighter) => acc + fighter.wins,
-                      0
+                      0,
                     )}
                   </h3>
                 </div>
@@ -388,7 +357,7 @@ export default function PlayOfTheWeekPage() {
                   <h3 className="mt-2 text-3xl font-black">
                     {henryFighters.reduce(
                       (acc, fighter) => acc + fighter.losses,
-                      0
+                      0,
                     )}
                   </h3>
                 </div>
@@ -402,7 +371,7 @@ export default function PlayOfTheWeekPage() {
                     {(
                       (henryFighters.reduce(
                         (acc, fighter) => acc + fighter.wins,
-                        0
+                        0,
                       ) /
                         playOfTheWeekHistory.length) *
                       100
@@ -445,7 +414,7 @@ export default function PlayOfTheWeekPage() {
                   <h3 className="mt-2 text-3xl font-black">
                     {chatoFighters.reduce(
                       (acc, fighter) => acc + fighter.wins,
-                      0
+                      0,
                     )}
                   </h3>
                 </div>
@@ -458,7 +427,7 @@ export default function PlayOfTheWeekPage() {
                   <h3 className="mt-2 text-3xl font-black">
                     {chatoFighters.reduce(
                       (acc, fighter) => acc + fighter.losses,
-                      0
+                      0,
                     )}
                   </h3>
                 </div>
@@ -472,7 +441,7 @@ export default function PlayOfTheWeekPage() {
                     {(
                       (chatoFighters.reduce(
                         (acc, fighter) => acc + fighter.wins,
-                        0
+                        0,
                       ) /
                         playOfTheWeekHistory.length) *
                       100
@@ -486,57 +455,56 @@ export default function PlayOfTheWeekPage() {
         </div>
       </section>
 
-{/* CURRENT PLAY OF THE WEEK */}
-<section className="hidden lg:block mx-auto max-w-7xl px-6 pb-16 md:px-10">
-  <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
-    <div className="grid lg:grid-cols-2">
-      {/* LEFT IMAGE */}
-      <div className="relative min-h-[420px]">
-        <Image
-          src="/bets/play-of-week.jpeg"
-          alt="Play Of The Week"
-          fill
-          className="object-cover"
-        />
+      {/* CURRENT PLAY OF THE WEEK */}
+      <section className="hidden lg:block mx-auto max-w-7xl px-6 pb-16 md:px-10">
+        <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
+          <div className="grid lg:grid-cols-2">
+            {/* LEFT IMAGE */}
+            <div className="relative min-h-[420px]">
+              <Image
+                src="/bets/play-of-week.jpeg"
+                alt="Play Of The Week"
+                fill
+                className="object-cover"
+              />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
-      </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+            </div>
 
-      {/* RIGHT CONTENT */}
-      <div className="flex flex-col justify-center p-8 md:p-12">
-        <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-          Current Official Parlay
-        </p>
+            {/* RIGHT CONTENT */}
+            <div className="flex flex-col justify-center p-8 md:p-12">
+              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+                Current Official Parlay
+              </p>
 
-        <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">
-          {currentPlay?.event}
-        </h2>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">
+                {currentEvent?.event}
+              </h2>
 
-        <div className="mt-8 space-y-6">
-          {/* HENRY PICK */}
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-              Henry's Pick
-            </p>
+              <div className="mt-8 space-y-6">
+                {/* HENRY PICK */}
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+                  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+                    Henry's Pick
+                  </p>
 
-            <h3 className="mt-2 text-3xl font-black uppercase">
-              {currentPlay?.henry.fighter}
-            </h3>
-   
-          </div>
+                  <h3 className="mt-2 text-3xl font-black uppercase">
+                    {currentPlay?.henry.fighter}
+                  </h3>
+                </div>
 
-          {/* CHATO PICK */}
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-              Chato's Pick
-            </p>
+                {/* CHATO PICK */}
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+                  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+                    Chato's Pick
+                  </p>
 
-            <h3 className="mt-2 text-3xl font-black uppercase">
-              {currentPlay?.chato.fighter}
-            </h3>
-          </div>
+                  <h3 className="mt-2 text-3xl font-black uppercase">
+                    {currentPlay?.chato.fighter}
+                  </h3>
+                </div>
 
-          {/* CONSENSUS
+                {/* CONSENSUS
           <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/10 p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-yellow-400">
               Consensus Pick
@@ -546,22 +514,22 @@ export default function PlayOfTheWeekPage() {
               Michael Chiesa
             </h3>
           </div> */}
-                   <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
-    Parlay Odds
-  </p>
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+                  <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+                    Parlay Odds
+                  </p>
 
-  <h3 className="mt-2 text-3xl font-black uppercase">
-    {currentPlay?.odds}
-  </h3>
-</div>
-        </div>
+                  <h3 className="mt-2 text-3xl font-black uppercase">
+                    {currentPlay?.parlayOdds}
+                  </h3>
+                </div>
+              </div>
 
-        {/* BUTTONS */}
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-  href="#video-breakdown"
-  className="
+              {/* BUTTONS */}
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#video-breakdown"
+                  className="
     rounded-full
     bg-red-600
     px-6
@@ -575,12 +543,12 @@ export default function PlayOfTheWeekPage() {
     duration-300
     hover:bg-red-500
   "
->
-  Watch Breakdown
-</a>
+                >
+                  Watch Breakdown
+                </a>
 
-          <button
-            className="
+                <button
+                  className="
               rounded-full
               border
               border-white/10
@@ -596,34 +564,32 @@ export default function PlayOfTheWeekPage() {
               duration-300
               hover:border-red-500/40
             "
-          >
-            View Full Card
-          </button>
+                >
+                  View Full Card
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* VIDEO BREAKDOWN */}
-<BreakdownVideo />
+      {/* VIDEO BREAKDOWN */}
+      <BreakdownVideo />
 
       {/* CHANNEL RECORD */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div
-            className={`rounded-3xl p-8 text-center border ${
-                totalUnits >= 0
-                    ? "border-green-500/20 bg-green-500/10"
-                    : "border-red-500/20 bg-red-500/10"
-            }`}
+          className={`rounded-3xl p-8 text-center border ${
+            totalUnits >= 0
+              ? "border-green-500/20 bg-green-500/10"
+              : "border-red-500/20 bg-red-500/10"
+          }`}
         >
-        <p
+          <p
             className={`text-xs uppercase tracking-[0.35em] ${
-                totalUnits >= 0
-                    ? "text-green-400"
-                    : "text-red-400"
+              totalUnits >= 0 ? "text-green-400" : "text-red-400"
             }`}
-        >
+          >
             Current Channel Record
           </p>
 
@@ -634,12 +600,10 @@ export default function PlayOfTheWeekPage() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
             <div>
               <p
-  className={`text-sm ${
-    totalUnits >= 0
-      ? "text-green-300"
-      : "text-red-300"
-  }`}
->
+                className={`text-sm ${
+                  totalUnits >= 0 ? "text-green-300" : "text-red-300"
+                }`}
+              >
                 Units Won
               </p>
 
@@ -650,34 +614,26 @@ export default function PlayOfTheWeekPage() {
 
             <div>
               <p
-  className={`text-sm ${
-    totalUnits >= 0
-      ? "text-green-300"
-      : "text-red-300"
-  }`}
->
+                className={`text-sm ${
+                  totalUnits >= 0 ? "text-green-300" : "text-red-300"
+                }`}
+              >
                 ROI
               </p>
 
-              <p className="text-2xl font-black text-white">
-                {roi}%
-              </p>
+              <p className="text-2xl font-black text-white">{roi}%</p>
             </div>
 
             <div>
               <p
-  className={`text-sm ${
-    totalUnits >= 0
-      ? "text-green-300"
-      : "text-red-300"
-  }`}
->
+                className={`text-sm ${
+                  totalUnits >= 0 ? "text-green-300" : "text-red-300"
+                }`}
+              >
                 Hit Rate
               </p>
 
-              <p className="text-2xl font-black text-white">
-                {accuracy}%
-              </p>
+              <p className="text-2xl font-black text-white">{accuracy}%</p>
             </div>
           </div>
         </div>
@@ -794,59 +750,58 @@ export default function PlayOfTheWeekPage() {
             </div>
           </div>
 
+          {/* CONSENSUS */}
+          {consensusFighters.length > 0 && (
+            <div className="mt-12 grid gap-8 lg:grid-cols-2">
+              {/* BEST CONSENSUS */}
+              <div className="rounded-3xl border border-yellow-500/20 bg-[#0d1117] p-6">
+                <h3 className="text-2xl font-black uppercase text-yellow-400">
+                  Consensus Winners
+                </h3>
 
-{/* CONSENSUS */}
-{consensusFighters.length > 0 && (
-  <div className="mt-12 grid gap-8 lg:grid-cols-2">
-    {/* BEST CONSENSUS */}
-    <div className="rounded-3xl border border-yellow-500/20 bg-[#0d1117] p-6">
-      <h3 className="text-2xl font-black uppercase text-yellow-400">
-        Consensus Winners
-      </h3>
+                <div className="mt-6 space-y-4">
+                  {bestConsensusFighters.map((fighter) => (
+                    <div
+                      key={fighter.fighter}
+                      className="flex items-center justify-between rounded-2xl border border-white/5 bg-black/30 px-4 py-4"
+                    >
+                      <span className="font-bold text-white">
+                        {fighter.fighter}
+                      </span>
 
-      <div className="mt-6 space-y-4">
-        {bestConsensusFighters.map((fighter) => (
-          <div
-            key={fighter.fighter}
-            className="flex items-center justify-between rounded-2xl border border-white/5 bg-black/30 px-4 py-4"
-          >
-            <span className="font-bold text-white">
-              {fighter.fighter}
-            </span>
+                      <span className="font-black text-yellow-400">
+                        {fighter.wins}-{fighter.losses}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-            <span className="font-black text-yellow-400">
-              {fighter.wins}-{fighter.losses}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
+              {/* WORST CONSENSUS */}
+              <div className="rounded-3xl border border-yellow-500/20 bg-[#0d1117] p-6">
+                <h3 className="text-2xl font-black uppercase text-yellow-400">
+                  Consensus Misses
+                </h3>
 
-    {/* WORST CONSENSUS */}
-    <div className="rounded-3xl border border-yellow-500/20 bg-[#0d1117] p-6">
-      <h3 className="text-2xl font-black uppercase text-yellow-400">
-        Consensus Misses
-      </h3>
+                <div className="mt-6 space-y-4">
+                  {worstConsensusFighters.map((fighter) => (
+                    <div
+                      key={fighter.fighter}
+                      className="flex items-center justify-between rounded-2xl border border-white/5 bg-black/30 px-4 py-4"
+                    >
+                      <span className="font-bold text-white">
+                        {fighter.fighter}
+                      </span>
 
-      <div className="mt-6 space-y-4">
-        {worstConsensusFighters.map((fighter) => (
-          <div
-            key={fighter.fighter}
-            className="flex items-center justify-between rounded-2xl border border-white/5 bg-black/30 px-4 py-4"
-          >
-            <span className="font-bold text-white">
-              {fighter.fighter}
-            </span>
-
-            <span className="font-black text-yellow-400">
-              {fighter.wins}-{fighter.losses}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
+                      <span className="font-black text-yellow-400">
+                        {fighter.wins}-{fighter.losses}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* RECENT PICKS */}
           <div className="mt-12 rounded-3xl border border-white/10 bg-[#0d1117] p-6">
@@ -878,21 +833,14 @@ export default function PlayOfTheWeekPage() {
 
                 <tbody>
                   {recentPicks.map((pick) => (
-                    <tr
-                      key={pick.event}
-                      className="border-b border-white/5"
-                    >
+                    <tr key={pick.event} className="border-b border-white/5">
                       <td className="px-4 py-5 font-bold text-white">
                         {pick.event}
                       </td>
 
-                      <td className="px-4 py-5 text-white">
-                        {pick.henryPick}
-                      </td>
+                      <td className="px-4 py-5 text-white">{pick.henryPick}</td>
 
-                      <td className="px-4 py-5 text-white">
-                        {pick.chatoPick}
-                      </td>
+                      <td className="px-4 py-5 text-white">{pick.chatoPick}</td>
 
                       <td
                         className={`px-4 py-5 font-black ${
@@ -911,7 +859,7 @@ export default function PlayOfTheWeekPage() {
           </div>
         </div>
       </section>
-         {/* CTA */}
+      {/* CTA */}
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-10">
           <p className="text-xs uppercase tracking-[0.35em] text-red-500">
@@ -925,8 +873,8 @@ export default function PlayOfTheWeekPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-            Follow Rear Naked Locks for weekly betting cards,
-            fight breakdowns, parlays, and pure MMA degeneracy.
+            Follow Rear Naked Locks for weekly betting cards, fight breakdowns,
+            parlays, and pure MMA degeneracy.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

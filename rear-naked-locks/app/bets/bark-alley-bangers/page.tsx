@@ -2,7 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getBarkAlley } from "@/lib/picks";
+
+import { getCurrentEvent } from "@/lib/events";
+import { getBarkAlley } from "@/lib/segments";
 import BreakdownVideo from "@/components/home/BreakdownVideo";
 import { barkAlleyHistory } from "@/data/barkAlley";
 import {
@@ -165,8 +167,8 @@ const bestWeightClass = Object.entries(
     return bRate - aRate;
   })[0];
 
+const currentEvent = getCurrentEvent();
 const currentBark = getBarkAlley();
-
 export default function BarkAlleyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -294,64 +296,76 @@ export default function BarkAlleyPage() {
       </section>
 
       {/* CURRENT PICK */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
-        <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
-          <div className="grid lg:grid-cols-2">
-            <div className="relative min-h-[400px]">
-              <Image
-                src="/bets/bark-alley.jpeg"
-                alt="Current Pick"
-                fill
-                className="object-cover"
-              />
+{/* CURRENT PICK */}
+<section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+  <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
+    <div className="grid lg:grid-cols-2">
+      {/* IMAGE */}
+      <div className="relative min-h-[400px]">
+        <Image
+          src="/bets/bark-alley.jpeg"
+          alt="Current Pick"
+          fill
+          className="object-cover"
+        />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      </div>
 
-            <div className="flex flex-col justify-center p-8 md:p-12">
-              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-                Current Bark Alley Pick
-              </p>
+      {/* CONTENT */}
+      <div className="flex flex-col justify-center p-8 md:p-12">
+        <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+          Current Bark Alley Pick
+        </p>
 
-              <h2 className="mt-4 text-5xl font-black uppercase leading-none">
-                {currentBark?.fighter}
-              </h2>
+        <h2 className="mt-4 text-5xl font-black uppercase leading-none">
+          {currentEvent?.event}
+        </h2>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  {currentBark?.odds}
-                </div>
+        <div className="mt-8 rounded-2xl border border-white/10 bg-black/30 p-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-red-400">
+            Underdog Of The Week
+          </p>
 
-                {/* <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
-                  Lightweight
-                </div> */}
-              </div>
+          <h3 className="mt-2 text-3xl font-black uppercase">
+            {currentBark?.pick.fighter}
+          </h3>
+        </div>
 
-                  <a
-        href="#video-breakdown"
-        className="
-          mt-6
-          inline-flex
-          w-full
-          items-center
-          justify-center
-          rounded-full
-          bg-red-600
-          px-5
-          py-4
-          text-sm
-          font-black
-          uppercase
-          tracking-wide
-          text-white
-        "
-      >
-        Watch Breakdown
-      </a>
-            </div>
+        <div className="mt-6 flex flex-wrap gap-4">
+          <div className="rounded-full border border-white/10 bg-black/40 px-5 py-3 text-sm font-black uppercase tracking-wide text-white">
+            {currentBark?.odds}
           </div>
         </div>
-      </section>
+
+        <a
+          href="#video-breakdown"
+          className="
+            mt-6
+            inline-flex
+            w-full
+            items-center
+            justify-center
+            rounded-full
+            bg-red-600
+            px-5
+            py-4
+            text-sm
+            font-black
+            uppercase
+            tracking-wide
+            text-white
+            transition-all
+            duration-300
+            hover:bg-red-500
+          "
+        >
+          Watch Breakdown
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ANALYTICS */}
       <section className="border-t border-white/10">

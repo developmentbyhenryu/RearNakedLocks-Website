@@ -478,7 +478,7 @@ export default function TrackerPage() {
                   }`}
                 >
                   {totalUnits > 0 ? "+" : ""}
-                  {totalUnits.toFixed(1)}
+                  {totalUnits.toFixed(2)}
                 </h3>
               </div>
 
@@ -579,7 +579,7 @@ export default function TrackerPage() {
           }`}
         >
           {potwStats.units > 0 ? "+" : ""}
-          {potwStats.units.toFixed(1)}
+          {potwStats.units.toFixed(2)}
         </p>
       </div>
     </div>
@@ -630,7 +630,7 @@ export default function TrackerPage() {
           }`}
         >
           {barkStats.units > 0 ? "+" : ""}
-          {barkStats.units.toFixed(1)}
+          {barkStats.units.toFixed(2)}
         </p>
       </div>
     </div>
@@ -681,7 +681,7 @@ export default function TrackerPage() {
           }`}
         >
           {atwStats.units > 0 ? "+" : ""}
-          {atwStats.units.toFixed(1)}
+          {atwStats.units.toFixed(2)}
         </p>
       </div>
     </div>
@@ -732,7 +732,7 @@ export default function TrackerPage() {
           }`}
         >
           {actionStats.units > 0 ? "+" : ""}
-          {actionStats.units.toFixed(1)}
+          {actionStats.units.toFixed(2)}
         </p>
       </div>
     </div>

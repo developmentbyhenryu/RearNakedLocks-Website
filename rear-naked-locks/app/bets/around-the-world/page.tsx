@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getAroundTheWorld } from "@/lib/picks";
-import BreakdownVideo from "@/components/home/BreakdownVideo";
+import { getCurrentEvent } from "@/lib/events";
+import { getAroundTheWorld } from "@/lib/segments";import BreakdownVideo from "@/components/home/BreakdownVideo";
 import CountryTracker from "@/components/stats/CountryTracker";
 import { aroundTheWorldHistory } from "@/data/aroundTheWorld";
 
@@ -25,6 +25,8 @@ const roi = (
   (totalUnits / aroundTheWorldHistory.length) *
   100
 ).toFixed(0);
+
+const currentEvent = getCurrentEvent();
 const currentWorld = getAroundTheWorld();
 
 export default function AroundTheWorldPage() {
@@ -159,9 +161,9 @@ export default function AroundTheWorldPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-red-500">
-              {currentWorld?.event}
-            </p>
+<p className="text-xs uppercase tracking-[0.35em] text-red-500">
+  {currentEvent?.event}
+</p>
 
             <h2 className="mt-3 text-4xl font-black uppercase md:text-5xl">
               Current Picks
@@ -188,9 +190,13 @@ export default function AroundTheWorldPage() {
             </div>
 
             <div className="p-6">
-              <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                {currentWorld?.countries[0].fighter}
-              </h3>
+              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+  {currentWorld?.picks[0].country}
+</p>
+
+<h3 className="mt-2 text-3xl font-black uppercase">
+  {currentWorld?.picks[0].fighter}
+</h3>
 
               <div className="mt-6 flex items-center justify-between">
                 <div>
@@ -225,9 +231,13 @@ export default function AroundTheWorldPage() {
 
             <div className="p-6">
              
-              <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                {currentWorld?.countries[1].fighter}
-              </h3>
+              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+  {currentWorld?.picks[1].country}
+</p>
+
+<h3 className="mt-2 text-3xl font-black uppercase">
+  {currentWorld?.picks[1].fighter}
+</h3>
 
               <div className="mt-6 flex items-center justify-between">
                 <div>
@@ -259,9 +269,13 @@ export default function AroundTheWorldPage() {
             </div>
 
             <div className="p-6">
-              <h3 className="mt-3 text-3xl font-black uppercase leading-none">
-                {currentWorld?.countries[2].fighter}
-              </h3>
+  <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+  {currentWorld?.picks[2].country}
+</p>
+
+<h3 className="mt-2 text-3xl font-black uppercase">
+  {currentWorld?.picks[2].fighter}
+</h3>
 
               <div className="mt-6 flex items-center justify-between">
                 <div>
@@ -290,7 +304,7 @@ export default function AroundTheWorldPage() {
       </p>
 
       <h3 className="mt-3 text-4xl font-black uppercase">
-        {currentWorld?.countries
+        {currentWorld?.picks
           .map((pick) => pick.fighter)
           .join(" + ")}
       </h3>
