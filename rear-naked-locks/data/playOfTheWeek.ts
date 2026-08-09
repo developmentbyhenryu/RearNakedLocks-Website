@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
           {
+    event: "UFC Gamrot vs Salkilld",
+
+    henryPick: "Steven Asplund",
+    henryResult: "win",
+
+    chatoPick: "Alexia Thainara",
+    chatoResult: "win",
+
+    parlayResult: "win",
+
+    units: 0.9,
+  },
+          {
     event: "UFC Medic vs Rodriguez",
 
     henryPick: "Michael Oliveira",

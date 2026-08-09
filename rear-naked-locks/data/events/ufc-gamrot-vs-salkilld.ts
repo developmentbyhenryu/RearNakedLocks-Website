@@ -90,69 +90,69 @@ const ufcGamrotVsSalkilld: Event = {
           fighter: "Mateusz Gamrot",
           odds: "+120",
           confidence: 6,
-          result: null,
+          result: "loss",
         },
 
         {
           fighter: "Diego Ferreira",
           odds: "-186",
           confidence: 8,
-          result: null,
+          result: "win",
         },
 
         {
           fighter: "Yadier Del Valle",
           odds: "-700",
           confidence: 10,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Alexia Thainara",
           odds: "-265",
           confidence: 8,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Ty Miller",
           odds: "-350",
           confidence: 9,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Steven Asplund",
           odds: "-280",
           confidence: 8,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Diyar Nurgozhay",
           odds: "-164",
           confidence: 7,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Jose Montanha",
           odds: "+135",
           confidence: 4,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Richie Miranda",
           odds: "+210",
           confidence: 5,
-          result: null,
+          result: "loss",
         },
         {
           fighter: "Miles Johns",
           odds: "-160",
           confidence: 6,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Juliana Miller",
           odds: "-260",
           confidence: 8,
-          result: null,
+          result: "win",
         },
       ],
 
@@ -161,69 +161,69 @@ const ufcGamrotVsSalkilld: Event = {
           fighter: "Mateusz Gamrot",
           odds: "+120",
           confidence: 6,
-          result: null,
+          result: "loss",
         },
 
         {
           fighter: "Diego Ferreira",
           odds: "-186",
           confidence: 7,
-          result: null,
+          result: "win",
         },
 
         {
           fighter: "Yadier Del Valle",
           odds: "-700",
           confidence: 10,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Alexia Thainara",
           odds: "-265",
           confidence: 8,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Ty Miller",
           odds: "-350",
           confidence: 9,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Steven Asplund",
           odds: "-280",
           confidence: 8,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Diyar Nurgozhay",
           odds: "-164",
           confidence: 7,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Louie Sutherland",
           odds: "-162",
           confidence: 4,
-          result: null,
+          result: "loss",
         },
         {
           fighter: "Manoel Sousa",
           odds: "-280",
           confidence: 7,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Miles Johns",
           odds: "-160",
           confidence: 6,
-          result: null,
+          result: "win",
         },
         {
           fighter: "Juliana Miller",
           odds: "-260",
           confidence: 8,
-          result: null,
+          result: "win",
         },
       ],
     },
@@ -234,18 +234,18 @@ const ufcGamrotVsSalkilld: Event = {
 
       henry: {
         fighter: "Steven Asplund",
-        result: null,
+        result: "win",
       },
 
       chato: {
         fighter: "Alexia Thainara",
-        result: null,
+        result: "win",
       },
 
       parlayOdds: "-111",
-      result: null,
+      result: "win",
 
-      units: 0,
+      units: 0.9,
     },
 
     barkAlley: {
@@ -255,11 +255,11 @@ const ufcGamrotVsSalkilld: Event = {
 
       pick: {
         fighter: "Mateusz Gamrot",
-        result: null,
-        method: null,
+        result: "loss",
+        method: "submission",
       },
       odds: "+120",
-      units: 0,
+      units: -1,
     },
 
     aroundTheWorld: {
@@ -271,25 +271,25 @@ const ufcGamrotVsSalkilld: Event = {
         {
           country: "Brazil",
           fighter: "Alexia Thainara",
-          result: null,
+          result: "win",
         },
 
         {
           country: "USA",
           fighter: "Ty Miller",
-          result: null,
+          result: "win",
         },
 
         {
           country: "Kazakhstan",
           fighter: "Diyar Nurgozhay",
-          result: null,
+          result: "win",
         },
       ],
 
       parlayOdds: "+185",
-      result: null,
-      units: 0,
+      result: "win",
+      units: 1.85,
     },
 
     allAction: {
@@ -300,25 +300,25 @@ const ufcGamrotVsSalkilld: Event = {
       picks: [
         {
           fighter: "Juliana Miller",
-          method: "",
-          result: null,
+          method: "submission",
+          result: "win",
         },
         {
           fighter: "Diego Ferreira",
-          method: "",
-          result: null,
+          method: "decision",
+          result: "win",
         },
       ],
 
       parlayOdds: "+107",
 
-      result: null,
+      result: "win",
 
-      units: 0,
+      units: 1.07,
     },
   },
   published: {
-    youtube: false,
+    youtube: true,
 
     homepage: true,
 

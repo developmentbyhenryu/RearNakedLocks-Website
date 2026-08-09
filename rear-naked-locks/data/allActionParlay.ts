@@ -1,6 +1,41 @@
 import { truncate } from "fs";
 
 export const allActionHistory = [
+  {
+    event: "UFC Gamrot vs Salkilld",
+    
+    odds: "+107",
+    
+    parlayResult: "win",
+
+    units: 1.07,
+
+    legs: [
+      {
+        fighter: "Juliana Miller",
+
+        result: "win",
+
+        method: "submission",
+
+        round: 2,
+        
+        isFinish: true,
+      },
+
+      {
+        fighter: "Diego Ferreira",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+
+        isFinish: false,
+      },
+    ],
+  },
 {
     event: "UFC Medic vs Rodriguez",
     

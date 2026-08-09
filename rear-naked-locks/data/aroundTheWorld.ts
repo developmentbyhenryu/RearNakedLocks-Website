@@ -1,4 +1,31 @@
 export const aroundTheWorldHistory = [
+ {
+    event: "UFC Gamrot vs Salkilld",
+
+    parlayResult: "win",
+
+    units: 1.85,
+
+    legs: [
+      {
+        country: "Brazil",
+        fighter: "Alexia Thainara",
+        result: "win",
+      },
+
+      {
+        country: "USA",
+        fighter: "Ty Miller",
+        result: "win",
+      },
+
+      {
+        country: "Kazakhstan",
+        fighter: "Diyar Nurgozhay",
+        result: "win",
+      },
+    ],
+  },
   {
     event: "UFC Medic vs Rodriguez",
 

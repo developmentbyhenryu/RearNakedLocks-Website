@@ -1,5 +1,22 @@
 export const barkAlleyHistory = [
       {
+    event: "UFC Gamrot vs Salkilld",
+
+    fighter: "Mateusz Gamrot",
+
+    weightClass: "Lightweight",
+
+    odds: "+120",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "submission",
+
+    units: -1,
+  }, 
+      {
     event: "UFC Medic vs Rodriguez",
 
     fighter: "Kyle Prepolec",
