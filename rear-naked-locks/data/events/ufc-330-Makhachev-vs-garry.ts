@@ -1,4 +1,6 @@
-const ufc330MakhachevVsGarry = {
+import type { Event } from "@/types/event";
+
+const ufc330MakhachevVsGarry: Event = {
   /* ==========================================
      BASIC EVENT INFO
   ========================================== */
@@ -23,14 +25,13 @@ const ufc330MakhachevVsGarry = {
   ========================================== */
 
   media: {
-    poster: "",
-
-    banner: "",
-
+    poster: "/events/ufc-330-makhachev-vs-garry.jpg",
+    banner: "/events/ufc-330-makhachev-vs-garry-banner.jpg",
+    thumbnail: "/events/gamrot-salkilld-thumbnail.jpg",
     video: {
-      youtubeId: "",
+      youtubeId: "WGxHqXHirSw",
 
-      title: "",
+      title: "Everyone's Betting Salkilld... Here's Why We're Fading Him",
     },
   },
 
@@ -114,9 +115,9 @@ const ufc330MakhachevVsGarry = {
           result: null,
         },
         {
-          fighter: "Jose Ochoa",
-          odds: "-400",
-          confidence: 10,
+          fighter: "Eduardo Henrique",
+          odds: "+105",
+          confidence: 7,
           result: null,
         },
         {
@@ -189,9 +190,9 @@ const ufc330MakhachevVsGarry = {
           result: null,
         },
         {
-          fighter: "Jose Ochoa",
-          odds: "-400",
-          confidence: 10,
+          fighter: "Charles Johnson",
+          odds: "-125",
+          confidence: 6,
           result: null,
         },
         {
@@ -203,31 +204,31 @@ const ufc330MakhachevVsGarry = {
         {
           fighter: "Esteban Ribovics",
           odds: "-520",
-          confidence: 9,
+          confidence: 10,
           result: null,
         },
         {
           fighter: "Jalin Turner",
           odds: "-172",
-          confidence: 8,
+          confidence: 10,
           result: null,
         },
         {
           fighter: "Joel Alvarez",
           odds: "-280",
-          confidence: 9,
+          confidence: 10,
           result: null,
         },
         {
           fighter: "Tresean Gore",
           odds: "-154",
-          confidence: 6,
+          confidence: 8,
           result: null,
         },
         {
           fighter: "Donte Johnson",
           odds: "-230",
-          confidence: 4,
+          confidence: 6,
           result: null,
         },
         {
@@ -237,9 +238,9 @@ const ufc330MakhachevVsGarry = {
           result: null,
         },
         {
-          fighter: "Neil Magny",
-          odds: "+100",
-          confidence: 5,
+          fighter: "Ramiz Brahimaj",
+          odds: "-128",
+          confidence: 7,
           result: null,
         },
         {
@@ -254,23 +255,23 @@ const ufc330MakhachevVsGarry = {
     /* ---------- Play Of The Week ---------- */
 
     playOfTheWeek: {
+      slug: "play-of-the-week",
       title: "Play Of The Week",
-
-      description: "",
+      description: "Henry + Chato's official weekly parlay.",
 
       henry: {
-        fighter: "",
+        fighter: "Joel Alvarez",
 
         result: null,
       },
 
       chato: {
-        fighter: "",
+        fighter: "Esteban Ribovics",
 
         result: null,
       },
 
-      parlayOdds: "",
+      parlayOdds: "-179",
 
       result: null,
 
@@ -281,8 +282,8 @@ const ufc330MakhachevVsGarry = {
 
     barkAlley: {
       title: "Bark Alley",
-
-      description: "",
+      slug: "bark-alley",
+      description: "Best underdog of the week.",
 
       pick: {
         fighter: "Ian Machado Garry",
@@ -292,7 +293,7 @@ const ufc330MakhachevVsGarry = {
         method: null,
       },
 
-      odds: "+280",
+      odds: "+255",
 
       units: 0,
     },
@@ -301,12 +302,30 @@ const ufc330MakhachevVsGarry = {
 
     aroundTheWorld: {
       title: "Around The World",
-
+      slug: "around-the-world",
       description: "",
 
-      picks: [],
+      picks: [
+        {
+          country: "Argentina",
+          fighter: "Esteban Ribovics",
+          result: null,
+        },
 
-      parlayOdds: "",
+        {
+          country: "USA",
+          fighter: "Jalin Turner",
+          result: null,
+        },
+
+        {
+          country: "Spain",
+          fighter: "Joel Alvarez",
+          result: null,
+        },
+      ],
+
+      parlayOdds: "+142",
 
       result: null,
 
@@ -317,12 +336,23 @@ const ufc330MakhachevVsGarry = {
 
     allAction: {
       title: "All Action Parlay",
-
+      slug: "all-action",
       description: "",
 
-      picks: [],
+      picks: [
+        {
+          fighter: "Joel Alvarez",
+          method: "",
+          result: null,
+        },
+        {
+          fighter: "Ramiz Brahimaj",
+          method: "",
+          result: null,
+        },
+      ],
 
-      parlayOdds: "",
+      parlayOdds: "+130",
 
       result: null,
 
@@ -337,7 +367,7 @@ const ufc330MakhachevVsGarry = {
   published: {
     homepage: false,
 
-    youtube: false,
+    youtube: true,
 
     social: false,
   },

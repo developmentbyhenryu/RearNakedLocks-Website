@@ -1,7 +1,7 @@
 import type { Event } from "@/types/event";
 
-import ufcGamrotVsSalkilld from "./ufc-gamrot-vs-salkilld";
+import ufc330MakhachevVsGarry from "./ufc-330-Makhachev-vs-garry";
 
 export const events: Event[] = [
-  ufcGamrotVsSalkilld,
+  ufc330MakhachevVsGarry,
 ];

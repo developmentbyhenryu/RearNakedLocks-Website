@@ -16,7 +16,7 @@ const ufcGamrotVsSalkilld: Event = {
 
   location: "Las Vegas, Nevada, USA",
 
-  status: "upcoming",
+  status: "completed",
   version: 2,
   /* ==========================================
    FEATURED FIGHTS

@@ -290,8 +290,8 @@ export default function AllActionPage() {
     <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
       <div className="relative h-[320px] overflow-hidden">
         <Image
-          src="/fighters/juliana-miller-125.png"
-          alt="Juliana Miller"
+          src="/fighters/joel-alvarez170.png"
+          alt="Joel Alvarez"
           fill
           className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
@@ -330,8 +330,8 @@ export default function AllActionPage() {
     <div className="overflow-hidden rounded-3xl border border-red-500/20 bg-[#0d1117]">
       <div className="relative h-[320px] overflow-hidden">
         <Image
-          src="/fighters/diego-ferreira-155.png"
-          alt="Diego Ferreira"
+          src="/fighters/ramiz-brahimaj170.png"
+          alt="Ramiz Brahimaj"
           fill
           className="object-contain transition-transform duration-500 group-hover:scale-105"
         />

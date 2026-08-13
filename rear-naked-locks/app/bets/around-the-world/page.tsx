@@ -180,8 +180,8 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/alexia-thainara125.png"
-                alt="Alexia Thainara"
+                src="/fighters/esteban-ribovics155.png"
+                alt="Esteban Ribovics"
                 fill
                 className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
@@ -220,8 +220,8 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/ty-miller-170.png"
-                alt="Ty Miller"
+                src="/fighters/jalin-turner155.png"
+                alt="Jalin Turner"
                 fill
                 className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
@@ -259,8 +259,8 @@ export default function AroundTheWorldPage() {
           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/fighters/diyar-nurgozhay-205.png"
-                alt="Diyar Nurgozhay"
+                src="/fighters/joel-alvarez170.png"
+                alt="Joel Alvarez"
                 fill
                 className="object-contain transition-transform duration-500 group-hover:scale-105"
               />

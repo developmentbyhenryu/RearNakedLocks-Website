@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../ui/Button";
 export default function FeaturedEvent() {
   return (
@@ -8,7 +9,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC 330 Makhachev vs Machado Garry
+          UFC Hernandez vs Rodrigues
         </h2>
       </div>
 
@@ -20,11 +21,11 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Gamrot <br /> vs Salkilld
+              Makhachev <br /> vs Garry
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
-              Full breakdowns, betting analysis, and predictions for UFC Gamrot vs Salkilld.
+              Full breakdowns, betting analysis, and predictions for UFC Makhachev vs Garry.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -34,11 +35,11 @@ export default function FeaturedEvent() {
     </Button>
   </a>
 
-  <a href="/events/ufc-gamrot-vs-salkilld">
+  <Link href="/events/ufc-330-Makhachev-vs-garry">
     <Button variant="secondary">
       View Picks
     </Button>
-  </a>
+  </Link>
 </div>
           </div>
 
