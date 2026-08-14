@@ -1,9 +1,9 @@
 const latestBreakdown = {
-  event: "UFC Vegas",
-  fight: "Gamrot vs Salkilld",
-  title: "Everyone's Betting Salkilld... Here's Why We're Fading Him",
-  youtubeId: "WGxHqXHirSw",
-  date: "August 6, 2026",
+  event: "UFC Philly",
+  fight: "Makhachev vs Garry",
+  title: "UFC 330 Predictions, Best Bets & Parlays | Makhachev vs. Garry Breakdown",
+  youtubeId: "ZBuP19K_Yjw",
+  date: "August 13, 2026",
 };
 
 export default function BreakdownVideo() {
