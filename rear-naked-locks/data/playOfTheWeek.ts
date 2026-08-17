@@ -1,5 +1,18 @@
 export const playOfTheWeekHistory = [
-          {
+  {
+    event: "UFC 330 Makhachev vs Garry",
+
+    henryPick: "Joel Alvarez",
+    henryResult: "loss",
+
+    chatoPick: "Esteban Ribovics",
+    chatoResult: "win",
+
+    parlayResult: "loss",
+
+    units: -1,
+  },
+  {
     event: "UFC Gamrot vs Salkilld",
 
     henryPick: "Steven Asplund",
@@ -12,7 +25,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.9,
   },
-          {
+  {
     event: "UFC Medic vs Rodriguez",
 
     henryPick: "Michael Oliveira",
@@ -25,7 +38,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.66,
   },
-        {
+  {
     event: "UFC Ankalaev vs Guskov",
 
     henryPick: "Axel Sola",
@@ -38,7 +51,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.82,
   },
-        {
+  {
     event: "UFC Du Plessis vs Usman",
 
     henryPick: "Fatima Kline",
@@ -51,7 +64,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.69,
   },
-      {
+  {
     event: "UFC 329 Mcgregor vs Holloway 2",
 
     henryPick: "Loneer Kavanagh",
@@ -76,7 +89,7 @@ export const playOfTheWeekHistory = [
     parlayResult: "win",
 
     units: 0.76,
-  }, 
+  },
   {
     event: "UFC Kape vs Horiguchi",
 
@@ -89,7 +102,7 @@ export const playOfTheWeekHistory = [
     parlayResult: "win",
 
     units: 0.7,
-  },  
+  },
   {
     event: "UFC Freedom 250 Topuria vs Gaethje",
 
@@ -183,7 +196,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC Burns vs Malott",
 
     henryPick: "Jasmine Jasudavicius",
@@ -196,7 +209,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.71,
   },
-   {
+  {
     event: "UFC 327",
 
     henryPick: "Kelvin Gastelum",
@@ -209,7 +222,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC Moicano vs Duncan",
 
     henryPick: "Alessandro Costa",
@@ -222,7 +235,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.52,
   },
-   {
+  {
     event: "UFC Adesanya vs Pyfer",
 
     henryPick: "Lerryan Douglas",
@@ -238,7 +251,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.74,
   },
-   {
+  {
     event: "UFC Evloev vs Murphy",
 
     henryPick: "Kurtis Campbell",
@@ -251,7 +264,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC Emmett vs Vallejos",
 
     henryPick: "Myktybek Orolbai",
@@ -264,7 +277,7 @@ export const playOfTheWeekHistory = [
 
     units: 0.74,
   },
-   {
+  {
     event: "UFC 326",
 
     henryPick: "Alberto Montes",
@@ -277,7 +290,7 @@ export const playOfTheWeekHistory = [
 
     units: 1.15,
   },
-   {
+  {
     event: "UFC Moreno vs Kavanagh",
 
     henryPick: "Brandon Moreno",
@@ -290,7 +303,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC Strickland vs Hernandez",
 
     henryPick: "Geoff Neal",
@@ -303,7 +316,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC Bautista vs Oliveira",
 
     henryPick: "Jailton Almeida",
@@ -316,7 +329,7 @@ export const playOfTheWeekHistory = [
 
     units: -1,
   },
-   {
+  {
     event: "UFC 325",
 
     henryPick: "Johnathan Micallef",
@@ -329,7 +342,7 @@ export const playOfTheWeekHistory = [
 
     units: 1.18,
   },
-   {
+  {
     event: "UFC 324",
 
     henryPick: "Ty Miller",

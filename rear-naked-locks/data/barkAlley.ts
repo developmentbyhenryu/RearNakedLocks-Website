@@ -1,4 +1,21 @@
 export const barkAlleyHistory = [
+        {
+    event: "UFC 330 Makhachev vs Garry",
+
+    fighter: "Ian Machado Garry",
+
+    weightClass: "Welterweight",
+
+    odds: "+255",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "decision",
+
+    units: -1,
+  }, 
       {
     event: "UFC Gamrot vs Salkilld",
 

@@ -2,6 +2,41 @@ import { truncate } from "fs";
 
 export const allActionHistory = [
   {
+    event: "UFC 330 Makhachev vs Garry",
+    
+    odds: "+130",
+    
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        fighter: "Joel Alvarez",
+
+        result: "loss",
+
+        method: "decision",
+
+        round: 2,
+        
+        isFinish: false,
+      },
+
+      {
+        fighter: "Ramiz Brahimaj",
+
+        result: "loss",
+
+        method: "knockout",
+
+        round: 2,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC Gamrot vs Salkilld",
     
     odds: "+107",

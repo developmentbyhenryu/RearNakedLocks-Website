@@ -1,5 +1,32 @@
 export const aroundTheWorldHistory = [
  {
+    event: "UFC 330 Makhachev vs Garry",
+
+    parlayResult: "lodd",
+
+    units: -1,
+
+    legs: [
+      {
+        country: "Argentina",
+        fighter: "Esteban Ribovics",
+        result: "win",
+      },
+
+      {
+        country: "USA",
+        fighter: "Jalin Turner",
+        result: "win",
+      },
+
+      {
+        country: "Spain",
+        fighter: "Joel Alvarez",
+        result: "loss",
+      },
+    ],
+  },
+ {
     event: "UFC Gamrot vs Salkilld",
 
     parlayResult: "win",
