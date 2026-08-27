@@ -1,6 +1,6 @@
 export const aroundTheWorldHistory = [
    {
-    event: "UFC hernandez vs Rodrigues",
+    event: "UFC Hernandez vs Rodrigues",
 
     parlayResult: "loss",
 
