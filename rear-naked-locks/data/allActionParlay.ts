@@ -2,6 +2,41 @@ import { truncate } from "fs";
 
 export const allActionHistory = [
   {
+    event: "UFC Hernandez vs Rodrigues",
+    
+    odds: "+110",
+    
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        fighter: "Vitor Petrino",
+
+        result: "win",
+
+        method: "decision",
+
+        round: 3,
+        
+        isFinish: false,
+      },
+
+      {
+        fighter: "Mason Jones",
+
+        result: "loss",
+
+        method: "knockout",
+
+        round: 2,
+
+        isFinish: true,
+      },
+    ],
+  },
+  {
     event: "UFC 330 Makhachev vs Garry",
     
     odds: "+130",
@@ -18,7 +53,7 @@ export const allActionHistory = [
 
         method: "decision",
 
-        round: 2,
+        round: 3,
         
         isFinish: false,
       },

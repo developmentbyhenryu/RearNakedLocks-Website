@@ -1,8 +1,35 @@
 export const aroundTheWorldHistory = [
+   {
+    event: "UFC hernandez vs Rodrigues",
+
+    parlayResult: "loss",
+
+    units: -1,
+
+    legs: [
+      {
+        country: "Brazil",
+        fighter: "Lerryan Douglas",
+        result: "loss",
+      },
+
+      {
+        country: "Netherlands",
+        fighter: "Reinier De Ridder",
+        result: "win",
+      },
+
+      {
+        country: "Wales",
+        fighter: "Mason Jones",
+        result: "loss",
+      },
+    ],
+  },
  {
     event: "UFC 330 Makhachev vs Garry",
 
-    parlayResult: "lodd",
+    parlayResult: "loss",
 
     units: -1,
 

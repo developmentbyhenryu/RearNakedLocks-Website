@@ -1,4 +1,17 @@
 export const playOfTheWeekHistory = [
+    {
+    event: "UFC Hernandez vs Rodrigues",
+
+    henryPick: "Anthony Hernandez",
+    henryResult: "loss",
+
+    chatoPick: "Lerryan Douglas",
+    chatoResult: "loss",
+
+    parlayResult: "loss",
+
+    units: -1,
+  },
   {
     event: "UFC 330 Makhachev vs Garry",
 

@@ -1,4 +1,21 @@
 export const barkAlleyHistory = [
+          {
+    event: "UFC Hernandez vs Rodrigues",
+
+    fighter: "Kennedy Nzechukwu",
+
+    weightClass: "Heavyweight",
+
+    odds: "+114",
+
+    result: "loss",
+
+    methodOfVictory: null,
+
+    methodOfLoss: "knockout",
+
+    units: -1,
+  }, 
         {
     event: "UFC 330 Makhachev vs Garry",
 
