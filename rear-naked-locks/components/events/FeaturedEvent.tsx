@@ -9,7 +9,7 @@ export default function FeaturedEvent() {
         </p>
 
         <h2 className="text-4xl uppercase text-white md:text-5xl">
-          UFC Hernandez vs Rodrigues
+          UFC Hooker vs Parnasse
         </h2>
       </div>
 
@@ -21,7 +21,7 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Makhachev <br /> vs Garry
+              Normagomedov <br /> vs Yadong
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
@@ -35,7 +35,7 @@ export default function FeaturedEvent() {
     </Button>
   </a>
 
-  <Link href="/events/ufc-330-Makhachev-vs-garry">
+  <Link href="/events/ufc-nurmagomedov-vs-yadong">
     <Button variant="secondary">
       View Picks
     </Button>
