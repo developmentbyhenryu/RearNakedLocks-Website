@@ -21,7 +21,7 @@ export default function FeaturedEvent() {
             </p>
 
             <h3 className="mb-6 text-4xl uppercase leading-none sm:text-5xl text-white">
-              Normagomedov <br /> vs Yadong
+              Nurmagomedov <br /> vs Yadong
             </h3>
 
             <p className="mb-8 text-lg text-gray-300">
