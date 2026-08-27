@@ -5,7 +5,7 @@ const ufcNurmagomedovVsYadong: Event = {
      BASIC EVENT INFO
   ========================================== */
 
-  slug: "ufc-Nurmagomedov-vs-Yadong",
+  slug: "ufc-nurmagomedov-vs-yadong",
 
   event: "UFC Nurmagomedov vs Yadong",
 
